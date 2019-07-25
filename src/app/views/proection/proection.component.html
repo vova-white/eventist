@@ -1,0 +1,56 @@
+<app-section-wrapper [addPadding]="true">
+  <app-heading heading="Проекция"></app-heading>
+  <div class="proection__block">
+    <div class="proection__inputs">
+      <div class="proection__elem">
+        <p>Высота экрана</p>
+        <input type="text" />
+      </div>
+
+      <div class="proection__elem">
+        <p>Ширина экрана</p>
+        <input type="text" />
+      </div>
+
+      <div class="proection__elem">
+        <p>Количество человек</p>
+        <input type="text" />
+      </div>
+    </div>
+
+    <div class="floor__with--info">
+      <div class="elem__info--floor">
+        <p>Минимальное расстояние до первого ряда</p>
+        <span>3 метра</span>
+      </div>
+
+      <div class="elem__info--floor">
+        <p>Максимальное расстояние до последнего ряда</p>
+        <span>35 метров</span>
+        <h6>
+          *Eсли ваш зал длиннее, необходимо разместить дополнительные экраны
+        </h6>
+      </div>
+      <div class="elem__info--floor">
+        <p>Минимальная высота экрана над полом</p>
+        <span>1.5 метра</span>
+      </div>
+
+      <div class="elem__info--floor">
+        <p>Общая площадь экранов</p>
+        <span>1.5 метра</span>
+      </div>
+
+      <div class="elem__info--floor">
+        <p>Необходимая яркость проектора</p>
+        <span>100 lm</span>
+      </div>
+    </div>
+    <div class="choose__customer">
+      <a href="#">Выбрать поставщика</a>
+    </div>
+  </div>
+  <app-error-block></app-error-block>
+</app-section-wrapper>
+
+<app-menu-bottom></app-menu-bottom>

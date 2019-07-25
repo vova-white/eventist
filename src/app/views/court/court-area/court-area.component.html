@@ -1,0 +1,18 @@
+<div class="floor__section">
+  <p>Давайте решим, какую площадку нам искать</p>
+  <input
+    name="quantity"
+    type="number"
+    placeholder="Количество человек"
+    [(ngModel)]="calculationParams.quantity"
+    (keyup)="onChange()"
+  />
+</div>
+
+<div *ngIf="calculationParams.quantity">
+  <app-results-table
+    *ngFor="let item of tables"
+    [title]="item.title"
+    [data]="item.data"
+  ></app-results-table>
+</div>

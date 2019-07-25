@@ -1,0 +1,27 @@
+<app-section-wrapper [addPadding]="activeTab === 'guests'">
+  <div class="floor__block">
+    <app-heading heading="Площадка"></app-heading>
+
+    <div class="floor__page">
+      <ul class="switcher__floor ">
+        <li [ngClass]="{ active__switch: activeTab === 'area' }">
+          <a href="#" (click)="switchTab($event, 'area')">Площадка</a>
+        </li>
+        <li [ngClass]="{ active__switch: activeTab === 'guests' }">
+          <a href="#" (click)="switchTab($event, 'guests')">Гости</a>
+        </li>
+      </ul>
+
+      <div *ngIf="activeTab === 'area'">
+        <app-court-area></app-court-area>
+      </div>
+
+      <div *ngIf="activeTab === 'guests'" class="guest__section">
+        <app-court-guests></app-court-guests>
+      </div>
+    </div>
+  </div>
+  <app-error-block *ngIf="activeTab === 'guests'"></app-error-block>
+</app-section-wrapper>
+
+<app-menu-bottom></app-menu-bottom>

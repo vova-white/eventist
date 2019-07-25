@@ -1,0 +1,48 @@
+<p>Давайте решим сколько сюда влезет</p>
+<div class="guest__inner">
+  <div class="head__guest">
+    <p>Параметры зала</p>
+  </div>
+  <div class="guest__info">
+    <div class="guest__group">
+      <p>Длина (м.)</p>
+      <input
+        name="length"
+        type="number"
+        [(ngModel)]="calculationParams.length"
+        (keyup)="calcArea()"
+      />
+    </div>
+
+    <div class="guest__group">
+      <p>Ширина (м.)</p>
+      <input
+        name="width"
+        type="number"
+        [(ngModel)]="calculationParams.width"
+        (keyup)="calcArea()"
+      />
+    </div>
+
+    <div class="guest__group blue__guest">
+      <p>Площадь зала</p>
+      <input
+        name="area"
+        type="number"
+        [(ngModel)]="calculationParams.area"
+        (keyup)="onChange()"
+      />
+    </div>
+  </div>
+</div>
+
+<div *ngIf="calculationParams.area">
+  <app-results-table
+    [title]="table.title"
+    [data]="table.data"
+  ></app-results-table>
+</div>
+
+<div class="choose__customer">
+  <a href="#">Выбрать поставщика</a>
+</div>

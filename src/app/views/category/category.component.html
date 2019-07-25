@@ -1,0 +1,24 @@
+<div class="body__float">
+  <div class="category__block bottom__categor">
+    <app-heading heading="Категории" [showBack]="false"></app-heading>
+
+    <div class="main__category">
+      <a
+        *ngFor="let category of categories"
+        [routerLink]="category.path"
+        class="elems__category"
+      >
+        <div class="categorimg">
+          <img [src]="'assets/img/' + category.img" [alt]="category?.text" />
+        </div>
+        <p>{{ category?.text }}</p>
+      </a>
+    </div>
+
+    <div class="after__category">
+      <a href="#">Организовать</a>
+    </div>
+  </div>
+</div>
+
+<app-menu-bottom></app-menu-bottom>

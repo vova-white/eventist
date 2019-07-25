@@ -1,0 +1,28 @@
+<app-section-wrapper [addPadding]="true">
+  <app-heading heading="Риски"></app-heading>
+  <div class="risk__page">
+    <div class="budget__input">
+      <input type="text" placeholder="Бюджет" />
+    </div>
+    <div class="budget__chances">
+      <div class="elem__chance">
+        <p>Вероятность события (1% - 100%)</p>
+        <input type="text" value="89" />
+      </div>
+
+      <div class="elem__chance">
+        <p>Ущерб для мероприятия (1% - 100%)</p>
+        <input type="text" value="54" />
+      </div>
+    </div>
+
+    <div class="budget__excaption">
+      <p>
+        Для исключения угрозы разумно инвестировать <span>950 000 руб.</span>
+      </p>
+    </div>
+  </div>
+  <app-error-block></app-error-block>
+</app-section-wrapper>
+
+<app-menu-bottom></app-menu-bottom>

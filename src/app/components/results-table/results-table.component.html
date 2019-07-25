@@ -1,0 +1,12 @@
+<div class="floor__with--info">
+  <h3 *ngIf="title">{{ title }}</h3>
+  <div *ngFor="let item of data" class="elem__info--floor">
+    <p>{{ item?.label }}</p>
+    <span
+      >{{ item?.result | number: item.format | noComma }} &nbsp;<span
+        class="unit"
+        [innerHTML]="item.units | units"
+      ></span
+    ></span>
+  </div>
+</div>

@@ -1,0 +1,5 @@
+{
+  "TodoParser": {
+    "only": ["/src/app"],
+  }
+}

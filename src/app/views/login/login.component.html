@@ -1,0 +1,33 @@
+<div class="login__block">
+  <div class="head__login">
+    <h2>Eventist</h2>
+  </div>
+  <div class="bottom__login">
+    <div class="login__form">
+      <h2>Вход</h2>
+      <p>Введите номер телефона</p>
+
+      <form class="form__inner">
+        <div class="group__form">
+          <input type="tel" id="phone" />
+        </div>
+        <div class="group__form group__subm">
+          <input type="submit" value="Войти" />
+        </div>
+        <div class="bottom__form">
+          <div class="login__buttons">
+            <a href="#"
+              ><span><img src="assets/img/vk.png" alt="vk"/></span> Войти с
+              помощью Vkontakte
+            </a>
+            <a href="#"
+              ><span><img src="assets/img/fb.png" alt="fb"/></span> Войти с
+              помощью Facebook</a
+            >
+          </div>
+          <a [routerLink]="['/category']">Пропустить</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
