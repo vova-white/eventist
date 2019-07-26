@@ -12,4 +12,14 @@ export class ResultsTableComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  isObject(val) {
+    {
+      return typeof val === 'object';
+    }
+  }
+
+  isInfinity(val) {
+    return val === Infinity;
+  }
 }

@@ -1,14 +1,41 @@
 <app-section-wrapper>
   <app-heading heading="Туалеты"></app-heading>
-  <div class="light__block">
-    <div class="light__progress">
-      <div class="progress__head">
-        <div class="toilet__block">
-          <input type="text" placeholder="Количество участников" />
-          <input type="text" placeholder="Продолжительность" />
+  <div class="video__block">
+    <div class="count__visitors">
+      <div class="elem__audition elem__audition--no_margin">
+        <p>Количество участников</p>
+        <div class="range-slider">
+          <ng5-slider
+            [(value)]="calculationParams.quantity"
+            [options]="options"
+            (userChangeEnd)="changeRange($event, 'quantity')"
+          ></ng5-slider>
+        </div>
+      </div>
+
+      <div class="elem__audition">
+        <p>Продолжительность</p>
+        <div class="range-slider">
+          <ng5-slider
+            [(value)]="calculationParams.time"
+            [options]="optionsTime"
+            (userChangeEnd)="changeRange($event, 'time')"
+          ></ng5-slider>
         </div>
       </div>
     </div>
+
+    <div *ngIf="calculationParams.quantity">
+      <app-results-table
+        *ngFor="let item of tables"
+        [title]="item.title"
+        [data]="item.data"
+      ></app-results-table>
+    </div>
+    <div class="choose__customer">
+      <a href="#">Выбрать поставщика</a>
+    </div>
   </div>
+  <app-error-block></app-error-block>
 </app-section-wrapper>
 <app-menu-bottom></app-menu-bottom>

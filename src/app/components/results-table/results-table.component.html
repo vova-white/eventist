@@ -1,9 +1,16 @@
 <div class="floor__with--info">
   <h3 *ngIf="title">{{ title }}</h3>
   <div *ngFor="let item of data" class="elem__info--floor">
-    <p>{{ item?.label }}</p>
-    <span
-      >{{ item?.result | number: item.format | noComma }} &nbsp;<span
+    <p>{{ item.label }}</p>
+    <span *ngIf="!isObject(item.result)">
+      {{ item?.result | number: item.format | noComma }} &nbsp;<span
+        class="unit"
+        [innerHTML]="item.units | units"
+      ></span
+    ></span>
+    <span *ngIf="isObject(item.result)">
+      {{ item?.result.value | number: item.format | noComma
+      }}{{ isInfinity(item.result.max) ? '+' : '' }} &nbsp;<span
         class="unit"
         [innerHTML]="item.units | units"
       ></span

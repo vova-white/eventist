@@ -4,6 +4,8 @@ import { ResultsTable } from '../interfaces/results-table';
 import { SimpleItem } from '../models/simple-item';
 import { RangeItem } from '../models/range-item';
 import { RangeItemCalc } from '../models/range-item-calc';
+import { RangeTimeItem } from '../models/range-time-item';
+import { RangeTimeItemCalc } from '../models/range-time-item-calc';
 
 @Injectable({
   providedIn: 'root'
@@ -34,10 +36,19 @@ export class CalculationService {
         calculationParams.quantity || calculationParams.area
       );
     }
+
     if (item instanceof RangeItem) {
       calculatedItem = new RangeItemCalc(
         item,
         calculationParams.quantity || calculationParams.area
+      );
+    }
+
+    if (item instanceof RangeTimeItem) {
+      calculatedItem = new RangeTimeItemCalc(
+        item,
+        calculationParams.quantity,
+        calculationParams.time
       );
     }
 

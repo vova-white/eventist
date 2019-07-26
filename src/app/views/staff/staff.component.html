@@ -2,79 +2,22 @@
   <app-heading heading="Персонал"></app-heading>
   <div class="personal__block">
     <div class="count__visitors">
-      <input type="text" placeholder="Количество участников" />
+      <input
+        name="quantity"
+        type="number"
+        placeholder="Количество участников"
+        [(ngModel)]="calculationParams.quantity"
+        (keyup)="onChange()"
+      />
     </div>
-    <div class="floor__with--info">
+    <div *ngIf="calculationParams.quantity" class="floor__with--info">
       <h6>Необходимое количество персонала</h6>
 
-      <h3>Расшифровка бюджета</h3>
-      <div class="elem__info--floor">
-        <p>Пиво и вино</p>
-        <span>17</span>
-      </div>
-
-      <div class="elem__info--floor">
-        <p>Полный бар</p>
-        <span>26</span>
-      </div>
-      <div class="elem__info--floor">
-        <p>Кофе и чай</p>
-        <span>17</span>
-      </div>
-      <h3>Официанты</h3>
-      <div class="elem__info--floor">
-        <p>Банкет</p>
-        <span>17</span>
-      </div>
-
-      <div class="elem__info--floor">
-        <p>Фуршет</p>
-        <span>26</span>
-      </div>
-
-      <div class="elem__info--floor">
-        <p>Буфет</p>
-        <span>17</span>
-      </div>
-
-      <h3>Регистраторы</h3>
-      <div class="elem__info--floor">
-        <p>Бейджи и рассадка</p>
-        <span>17</span>
-      </div>
-
-      <div class="elem__info--floor">
-        <p>Только бейджи</p>
-        <span>26</span>
-      </div>
-
-      <div class="elem__info--floor">
-        <p>Только списки</p>
-        <span>17</span>
-      </div>
-
-      <div class="elem__info--floor">
-        <p>Пригласительные</p>
-        <span>17</span>
-      </div>
-
-      <h3>Другой персонал</h3>
-      <div class="elem__info--floor">
-        <p>Парковщики</p>
-        <span>17</span>
-      </div>
-      <div class="elem__info--floor">
-        <p>Гардеробщики</p>
-        <span>26</span>
-      </div>
-      <div class="elem__info--floor">
-        <p>Охранники</p>
-        <span>17</span>
-      </div>
-      <div class="elem__info--floor">
-        <p>Event Team</p>
-        <span>17</span>
-      </div>
+      <app-results-table
+        *ngFor="let item of tables"
+        [title]="item.title"
+        [data]="item.data"
+      ></app-results-table>
     </div>
     <div class="choose__customer">
       <a href="#">Выбрать поставщика</a>

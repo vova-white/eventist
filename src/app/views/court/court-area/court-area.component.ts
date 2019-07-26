@@ -29,7 +29,7 @@ export class CourtAreaComponent implements OnInit {
     new Range(1000, 1500, 375),
     new Range(1500, 2000, 500),
     new Range(2000, 4001, 700),
-    new Range(4001, Infinity, Infinity)
+    new Range(4001, Infinity, 700)
     // TODO: Площадка: Кейтеринг. Что показывать есть значение больше 4000 чел.
   ];
 
