@@ -54,4 +54,8 @@ export class CalculationService {
 
     return calculatedItem;
   }
+
+  public calcSound({ k1 = 1, k2 = 1.5, kvt = 1000, v = 0 }) {
+    return (v * k1 * k2) / kvt;
+  }
 }

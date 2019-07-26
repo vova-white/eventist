@@ -32,6 +32,8 @@ import { SettingsComponent } from './views/settings/settings.component';
 import { NoCommaPipe } from './shared/pipes/no-comma.pipe';
 import { UnitsPipe } from './shared/pipes/units.pipe';
 import { ResultsTableComponent } from './components/results-table/results-table.component';
+import { SoundStepComponent } from './views/sound/sound-step/sound-step.component';
+import { LightProgressComponent } from './components/light-progress/light-progress.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +64,9 @@ import { ResultsTableComponent } from './components/results-table/results-table.
     SettingsComponent,
     NoCommaPipe,
     UnitsPipe,
-    ResultsTableComponent
+    ResultsTableComponent,
+    SoundStepComponent,
+    LightProgressComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, Ng5SliderModule],
   providers: [],

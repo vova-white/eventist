@@ -1036,7 +1036,7 @@ body *{
 		width:100%;
 		margin-right:auto;
 		margin-left:auto;
-		&>div{
+		.sound__elem {
 			&.active__format{
 			    background-color: #216268;
 			}

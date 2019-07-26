@@ -1,0 +1,45 @@
+<div class="light__progress">
+  <div class="progress__head">
+    <ng-template
+      ngFor
+      let-item
+      let-index="index"
+      let-last="last"
+      [ngForOf]="list"
+    >
+      <div
+        *ngIf="index + 1 === step || index + 1 < step"
+        class="progress__elem"
+        [ngClass]="{
+          green__elem: index + 1 === step,
+          grey__elem: index + 1 < step
+        }"
+      >
+        <div class="progress__bar">
+          <img
+            *ngIf="index + 1 < step"
+            src="assets/img/greyoval.png"
+            alt="greyoval"
+          />
+          <img
+            *ngIf="index + 1 === step"
+            src="assets/img/greenoval.png"
+            alt="greyoval"
+          />
+          <img
+            *ngIf="index + 1 !== step && !last"
+            src="assets/img/line.png"
+            alt="line"
+          />
+        </div>
+        <div class="progress__name">
+          <ng-template [ngIf]="index + 1 < step">
+            <h2>{{ item.noActive || item.active }}</h2>
+            <p>{{ item.text }}</p>
+          </ng-template>
+          <h2 *ngIf="index + 1 === step">{{ item.active }}</h2>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</div>

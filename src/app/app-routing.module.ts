@@ -62,6 +62,10 @@ const routes: Routes = [
   },
   {
     path: 'sound',
+    redirectTo: 'sound/1'
+  },
+  {
+    path: 'sound/:step',
     component: SoundComponent
   },
   {

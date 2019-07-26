@@ -1,4 +1,4 @@
-<app-section-wrapper [addPadding]="true">
+<app-section-wrapper [addPadding]="calculationParams.quantity">
   <app-heading heading="Видео"></app-heading>
   <div class="video__block">
     <div class="count__visitors">
@@ -22,7 +22,7 @@
       <a href="#">Выбрать поставщика</a>
     </div>
   </div>
-  <app-error-block></app-error-block>
+  <app-error-block *ngIf="calculationParams.quantity"></app-error-block>
 </app-section-wrapper>
 
 <app-menu-bottom></app-menu-bottom>

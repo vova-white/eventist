@@ -1,0 +1,65 @@
+<div *ngIf="step === 1" class="count__visitors">
+  <input
+    name="quantity"
+    type="number"
+    placeholder="Количество участников"
+    [(ngModel)]="calculationParams.quantity"
+    (keyup)="onChange()"
+  />
+</div>
+
+<div *ngIf="step === 2" class="sound__elemes">
+  <a
+    *ngFor="let item of chooseParams.k1; let index = index"
+    href="#"
+    class="sound__elem"
+    (click)="setCalculationParams($event, 'k1', item.val)"
+    [ngClass]="{ active__format: calculationParams.k1 === item.val }"
+  >
+    <div class="img__elem">
+      <img
+        *ngIf="calculationParams.k1 === item.val"
+        [src]="'assets/img/sound' + (index + 1) + 'a.png'"
+        alt="sound"
+      />
+      <img
+        *ngIf="calculationParams.k1 !== item.val"
+        [src]="'assets/img/sound' + (index + 1) + '.png'"
+        alt="sound"
+      />
+    </div>
+    <p>{{ item.text }}</p>
+  </a>
+</div>
+
+<div *ngIf="step === 3" class="choose__format">
+  <a *ngFor="let item of chooseParams.k2; let index = index" href="#" class="elem__format" (click)="setCalculationParams($event, 'k2', item.val)" [ngClass]="{ active__format: calculationParams.k2 === item.val }">
+    <div class="format__image">
+        <img
+        *ngIf="calculationParams.k2 === item.val"
+        [src]="'assets/img/sound' + (index + 1) + 'a.png'"
+        alt="format"
+      />
+      <img
+        *ngIf="calculationParams.k2 !== item.val"
+        [src]="'assets/img/sound' + (index + 1) + '.png'"
+        alt="format"
+      />
+    </div>
+    <p>{{ item.text }}</p>
+  </a>
+</div>
+
+<ng-template [ngIf]="step === 4">
+  <div class="light__data" *ngIf="calculationParams.quantity">
+    <app-results-table
+      *ngFor="let item of tables"
+      [title]="item.title"
+      [data]="item.data"
+    ></app-results-table>
+  </div>
+
+  <div class="choose__customer">
+    <a href="#">Выбрать поставщика</a>
+  </div>
+</ng-template>
