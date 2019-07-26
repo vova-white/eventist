@@ -8,6 +8,9 @@
         [innerHTML]="item.units | units"
       ></span
     ></span>
+    <h6 *ngIf="item.description">
+      {{ item?.description }}
+    </h6>
     <span *ngIf="isObject(item.result)">
       {{ item?.result.value | number: item.format | noComma
       }}{{ isInfinity(item.result.max) ? '+' : '' }} &nbsp;<span

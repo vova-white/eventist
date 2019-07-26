@@ -6,7 +6,7 @@ export class RangeTimeItemCalc extends RangeTimeItem {
   result: any;
 
   constructor(item: RangeTimeItem, value: number, time: number) {
-    super(item.label, item.range, item.units);
+    super(item.label, item.range, item.units, item.activeParam);
 
     this.result = this.getResult(item.range, value, time);
   }

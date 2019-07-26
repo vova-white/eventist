@@ -25,30 +25,106 @@ export class CourtGuestsComponent implements OnInit {
     this.tableParams = [
       {
         data: [
-          new SimpleItem('Банкет', 1.7, 0, 'division', 'people'),
-          new SimpleItem('Фуршет', 1.43, 0, 'division', 'people'),
-          new SimpleItem('Фуршет с рассадкой', 1.55, 0, 'division', 'people'),
-          new SimpleItem('Коктейль', 1.1, 0, 'division', 'people'),
-          new SimpleItem('П-образно', 2.85, 0, 'division', 'people'),
-          new SimpleItem('Театр (плотно)', 1.1, 0, 'division', 'people'),
-          new SimpleItem('Театр (свободно)', 1.35, 0, 'division', 'people'),
-          new SimpleItem('Класс', 1.89, 0, 'division', 'people'),
+          new SimpleItem(
+            'Банкет',
+            1.7,
+            0,
+            'division',
+            'people',
+            '1.0-0',
+            'area'
+          ),
+          new SimpleItem(
+            'Фуршет',
+            1.43,
+            0,
+            'division',
+            'people',
+            '1.0-0',
+            'area'
+          ),
+          new SimpleItem(
+            'Фуршет с рассадкой',
+            1.55,
+            0,
+            'division',
+            'people',
+            '1.0-0',
+            'area'
+          ),
+          new SimpleItem(
+            'Коктейль',
+            1.1,
+            0,
+            'division',
+            'people',
+            '1.0-0',
+            'area'
+          ),
+          new SimpleItem(
+            'П-образно',
+            2.85,
+            0,
+            'division',
+            'people',
+            '1.0-0',
+            'area'
+          ),
+          new SimpleItem(
+            'Театр (плотно)',
+            1.1,
+            0,
+            'division',
+            'people',
+            '1.0-0',
+            'area'
+          ),
+          new SimpleItem(
+            'Театр (свободно)',
+            1.35,
+            0,
+            'division',
+            'people',
+            '1.0-0',
+            'area'
+          ),
+          new SimpleItem(
+            'Класс',
+            1.89,
+            0,
+            'division',
+            'people',
+            '1.0-0',
+            'area'
+          ),
           // TODO: Площадка. Гости. Проверить коеф.ты класс 45см и 75см
           new SimpleItem(
             'Класс (столы 45 см)',
             1.9305,
             0,
             'division',
-            'people'
+            'people',
+            '1.0-0',
+            'area'
           ),
           new SimpleItem(
             'Класс (столы 75 см)',
             2.2624,
             0,
             'division',
-            'people'
+            'people',
+            '1.0-0',
+            'area'
           ),
-          new SimpleItem('Общий стол', 3.1, 0, 'division', 'people')
+          new SimpleItem(
+            'Общий стол',
+            3.1,
+            0,
+            'division',
+            'people',
+            '1.0-0',
+            'area'
+          )
         ]
       }
     ];

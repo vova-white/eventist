@@ -23,6 +23,12 @@ export class UnitsPipe implements PipeTransform {
         case 'kilos':
           unit = `кг`;
           break;
+        case 'distance':
+          unit = `м`;
+          break;
+        case 'lm':
+          unit = 'lm';
+          break;
       }
       return unit;
     } else {

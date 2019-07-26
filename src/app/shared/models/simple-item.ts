@@ -5,6 +5,8 @@ export class SimpleItem {
   operation: string;
   units: string;
   format: string;
+  activeParam: string;
+  description: string;
 
   constructor(
     label: string,
@@ -12,7 +14,9 @@ export class SimpleItem {
     min: number = 0,
     operation: string = 'multiply',
     units: string = 'area',
-    format: string = '1.0-0'
+    format: string = '1.0-0',
+    activeParam: string = 'quantity',
+    description: string = ''
   ) {
     this.label = label || '';
     this.mult = mult;
@@ -20,5 +24,7 @@ export class SimpleItem {
     this.operation = operation;
     this.units = units;
     this.format = format;
+    this.activeParam = activeParam;
+    this.description = description;
   }
 }

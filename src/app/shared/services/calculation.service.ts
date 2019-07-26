@@ -33,21 +33,21 @@ export class CalculationService {
     if (item instanceof SimpleItem) {
       calculatedItem = new SimpleItemCalc(
         item,
-        calculationParams.quantity || calculationParams.area
+        calculationParams[item.activeParam]
       );
     }
 
     if (item instanceof RangeItem) {
       calculatedItem = new RangeItemCalc(
         item,
-        calculationParams.quantity || calculationParams.area
+        calculationParams[item.activeParam]
       );
     }
 
     if (item instanceof RangeTimeItem) {
       calculatedItem = new RangeTimeItemCalc(
         item,
-        calculationParams.quantity,
+        calculationParams[item.activeParam],
         calculationParams.time
       );
     }

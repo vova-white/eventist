@@ -16,7 +16,9 @@ export class SimpleItemCalc extends SimpleItem {
       item.min,
       item.operation,
       item.units,
-      item.format
+      item.format,
+      item.activeParam,
+      item.description
     );
     this.result = this.getResult(value, item.mult, item.min, item.operation);
   }

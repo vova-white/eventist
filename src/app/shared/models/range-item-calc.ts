@@ -5,7 +5,7 @@ export class RangeItemCalc extends RangeItem {
   result: Range;
 
   constructor(item: RangeItem, value: number) {
-    super(item.label, item.range, item.units);
+    super(item.label, item.range, item.units, item.activeParam);
     this.result = this.getResult(item.range, value);
   }
 
