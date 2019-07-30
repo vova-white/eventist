@@ -1,0 +1,19 @@
+<div *ngIf="list.length > 0" class="choose__format">
+  <a
+    *ngFor="let item of list; let index = index"
+    href="#"
+    class="elem__format"
+    (click)="onClick($event, paramName, item.value)"
+    [ngClass]="{ active__format: active === item.value }"
+  >
+    <div class="format__image">
+      <img *ngIf="active === item.value" [src]="item.activeImg" alt="format" />
+      <img
+        *ngIf="active !== item.value"
+        [src]="item.noActiveImg || item.activeImg"
+        alt="format"
+      />
+    </div>
+    <p>{{ item.text }}</p>
+  </a>
+</div>

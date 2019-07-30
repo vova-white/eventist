@@ -13,17 +13,17 @@
     *ngFor="let item of chooseParams.k1; let index = index"
     href="#"
     class="sound__elem"
-    (click)="setCalculationParams($event, 'k1', item.val)"
-    [ngClass]="{ active__format: calculationParams.k1 === item.val }"
+    (click)="setCalculationParams($event, 'k1', item.value)"
+    [ngClass]="{ active__format: calculationParams.k1 === item.value }"
   >
     <div class="img__elem">
       <img
-        *ngIf="calculationParams.k1 === item.val"
+        *ngIf="calculationParams.k1 === item.value"
         [src]="'assets/img/sound' + (index + 1) + 'a.png'"
         alt="sound"
       />
       <img
-        *ngIf="calculationParams.k1 !== item.val"
+        *ngIf="calculationParams.k1 !== item.value"
         [src]="'assets/img/sound' + (index + 1) + '.png'"
         alt="sound"
       />
@@ -32,23 +32,13 @@
   </a>
 </div>
 
-<div *ngIf="step === 3" class="choose__format">
-  <a *ngFor="let item of chooseParams.k2; let index = index" href="#" class="elem__format" (click)="setCalculationParams($event, 'k2', item.val)" [ngClass]="{ active__format: calculationParams.k2 === item.val }">
-    <div class="format__image">
-        <img
-        *ngIf="calculationParams.k2 === item.val"
-        [src]="'assets/img/sound' + (index + 1) + 'a.png'"
-        alt="format"
-      />
-      <img
-        *ngIf="calculationParams.k2 !== item.val"
-        [src]="'assets/img/sound' + (index + 1) + '.png'"
-        alt="format"
-      />
-    </div>
-    <p>{{ item.text }}</p>
-  </a>
-</div>
+<app-format-list
+  *ngIf="step === 3"
+  [list]="chooseParams.k2"
+  [active]="calculationParams.k2"
+  paramName="k2"
+  (chooseFormat)="onChooseFormat($event)"
+></app-format-list>
 
 <ng-template [ngIf]="step === 4">
   <div class="light__data" *ngIf="calculationParams.quantity">

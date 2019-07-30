@@ -42,6 +42,10 @@ const routes: Routes = [
   },
   {
     path: 'drink',
+    redirectTo: 'drink/1'
+  },
+  {
+    path: 'drink/:step',
     component: DrinkComponent
   },
   {

@@ -34,6 +34,14 @@ import { UnitsPipe } from './shared/pipes/units.pipe';
 import { ResultsTableComponent } from './components/results-table/results-table.component';
 import { SoundStepComponent } from './views/sound/sound-step/sound-step.component';
 import { LightProgressComponent } from './components/light-progress/light-progress.component';
+import { FormatListComponent } from './components/format-list/format-list.component';
+import { DrinkStepComponent } from './views/drink/drink-step/drink-step.component';
+import { DrinkCoffeeComponent } from './views/drink/drink-coffee/drink-coffee.component';
+import { DrinkReceptionComponent } from './views/drink/drink-reception/drink-reception.component';
+import { DrinkBuffetComponent } from './views/drink/drink-buffet/drink-buffet.component';
+import { DrinkBanquetComponent } from './views/drink/drink-banquet/drink-banquet.component';
+import { DrinkWeddingComponent } from './views/drink/drink-wedding/drink-wedding.component';
+import { DynamicLoaderDirective } from './shared/directives/dynamic-loader.directive';
 
 @NgModule({
   declarations: [
@@ -66,9 +74,24 @@ import { LightProgressComponent } from './components/light-progress/light-progre
     UnitsPipe,
     ResultsTableComponent,
     SoundStepComponent,
-    LightProgressComponent
+    LightProgressComponent,
+    FormatListComponent,
+    DrinkStepComponent,
+    DrinkCoffeeComponent,
+    DrinkReceptionComponent,
+    DrinkBuffetComponent,
+    DrinkBanquetComponent,
+    DrinkWeddingComponent,
+    DynamicLoaderDirective
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, Ng5SliderModule],
+  entryComponents: [
+    DrinkCoffeeComponent,
+    DrinkReceptionComponent,
+    DrinkBuffetComponent,
+    DrinkBanquetComponent,
+    DrinkWeddingComponent
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

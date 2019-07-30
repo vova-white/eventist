@@ -1,11 +1,11 @@
-<div class="floor__with--info">
+<div class="floor__with--info drink__floor">
   <h3 *ngIf="title">{{ title }}</h3>
   <div *ngFor="let item of data" class="elem__info--floor">
     <p>{{ item.label }}</p>
     <span *ngIf="!isObject(item.result)">
       {{ item?.result | number: item.format | noComma }} &nbsp;<span
         class="unit"
-        [innerHTML]="item.units | units"
+        [innerHTML]="item.units | units: item.result"
       ></span
     ></span>
     <h6 *ngIf="item.description">

@@ -1,5 +1,8 @@
 <app-section-wrapper [addPadding]="step === 4">
-  <app-heading heading="Звук"></app-heading>
+  <app-heading
+    heading="Звук"
+    [back]="step !== 1 ? '/sound/' + (step - 1) : ''"
+  ></app-heading>
   <div class="sound__block">
     <app-light-progress
       [step]="step"

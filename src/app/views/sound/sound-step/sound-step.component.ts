@@ -3,6 +3,8 @@ import { Range } from 'src/app/shared/models/range';
 import { RangeItem } from 'src/app/shared/models/range-item';
 import { StoreService } from 'src/app/shared/services/store.service';
 import { CalculationService } from 'src/app/shared/services/calculation.service';
+import { FormatListItem } from 'src/app/shared/models/format-list-item';
+import { IMG_PATH } from 'src/app/shared/constants';
 
 @Component({
   selector: 'app-sound-step',
@@ -22,11 +24,11 @@ export class SoundStepComponent implements OnInit {
   };
 
   chooseParams = {
-    k1: [{ val: 1.5, text: 'На улице' }, { val: 1, text: 'В помещении' }],
+    k1: [{ value: 1.5, text: 'На улице' }, { value: 1, text: 'В помещении' }],
     k2: [
-      { val: 1.5, text: 'Концерт' },
-      { val: 1, text: 'Банкет' },
-      { val: 0.5, text: 'Конференция' }
+      new FormatListItem(1.5, 'Концерт', `${IMG_PATH}form1.png`),
+      new FormatListItem(1, 'Банкет', `${IMG_PATH}form2a.png`),
+      new FormatListItem(0.5, 'Конференция', `${IMG_PATH}form3.png`)
     ]
   };
 
@@ -100,14 +102,19 @@ export class SoundStepComponent implements OnInit {
   createReturnChoose(choose, calc) {
     return {
       quantity: calc.quantity,
-      k1: choose.k1.filter(item => item.val === calc.k1)[0].text,
-      k2: choose.k2.filter(item => item.val === calc.k1)[0].text
+      k1: choose.k1.filter(item => item.value === calc.k1)[0].text,
+      k2: choose.k2.filter(item => item.value === calc.k2)[0].text
     };
   }
 
   setCalculationParams(e, param, val) {
     e.preventDefault();
     this.calculationParams[param] = val;
+    this.setTables();
+  }
+
+  onChooseFormat(e) {
+    this.calculationParams[e.param] = e.val;
     this.setTables();
   }
 

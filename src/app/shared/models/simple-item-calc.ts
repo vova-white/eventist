@@ -2,12 +2,6 @@ import { SimpleItem } from './simple-item';
 
 export class SimpleItemCalc extends SimpleItem {
   result: number;
-  calculationParams = {
-    quantity: 0
-  };
-
-  tables = [];
-  tablesParams = [];
 
   constructor(item: SimpleItem, value: number) {
     super(
@@ -25,6 +19,6 @@ export class SimpleItemCalc extends SimpleItem {
 
   getResult(value, mult, min, operation) {
     const result = operation === 'multiply' ? value * mult : value / mult;
-    return result <= min ? min : Math.ceil(result);
+    return result <= min ? min : Math.round(result * 100) / 100;
   }
 }

@@ -1,0 +1,93 @@
+<app-format-list
+  *ngIf="step === 1"
+  [list]="chooseParams.format"
+  [active]="calculationParams.format"
+  paramName="format"
+  (chooseFormat)="onChooseFormat($event)"
+></app-format-list>
+
+<div *ngIf="step === 2" class="count__visitors">
+  <input
+    name="quantity"
+    type="number"
+    placeholder="Количество участников"
+    [(ngModel)]="calculationParams.quantity"
+    (keyup)="onChange()"
+  />
+</div>
+
+<div *ngIf="step === 3 && step !== endStep" class="audition__check">
+  <div class="elem__audition">
+    <p>Мужчины/женщины</p>
+    <div class="slidecontainer range-slider range-slider--no_label">
+      <ng5-slider
+        [(value)]="calculationParams.audience.gender"
+        [options]="optionsGender"
+        (userChangeEnd)="onRangeChanges()"
+      ></ng5-slider>
+      <span class="left__slider"
+        >М {{ calculationParams.audience.gender }}%</span
+      >
+      <span class="right__slider"
+        >{{ 100 - calculationParams.audience.gender }}% Ж</span
+      >
+    </div>
+  </div>
+  <div class="elem__audition elem__audition__range">
+    <p>Аудитория</p>
+    <div class="slidecontainer range-slider range-slider--no_label">
+      <ng5-slider
+        [(value)]="calculationParams.audience.drinkers.low"
+        [(highValue)]="calculationParams.audience.drinkers.middle"
+        [options]="optionsDrinkers"
+        (userChangeEnd)="onRangeChanges()"
+      ></ng5-slider>
+      <div class="slider__inps">
+        <span
+          >мало {{ calculationParams.audience.drinkers.low }}%<span id="span1">
+          </span
+        ></span>
+        <span
+          >средние
+          {{
+            100 -
+              (100 -
+                calculationParams.audience.drinkers.middle +
+                calculationParams.audience.drinkers.low)
+          }}%<span id="span2"></span
+        ></span>
+        <span
+          ><span id="span3"></span
+          >{{ 100 - calculationParams.audience.drinkers.middle }}% энтузиасты
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="step === 4 && step !== endStep" class="audition__check">
+  <div class="elem__audition">
+    <p></p>
+    <div class="slidecontainer range-slider range-slider--no_label">
+      <ng5-slider
+        [(value)]="calculationParams.time"
+        [options]="optionsTime"
+        (userChangeEnd)="onRangeChanges()"
+      ></ng5-slider>
+      <span class="left__slider"
+        >{{ calculationParams.time }}
+        {{ 'timeLong' | units: calculationParams.time }}</span
+      >
+    </div>
+  </div>
+</div>
+
+<ng-template [ngIf]="step === endStep">
+  <div class="light__data" *ngIf="calculationParams.quantity">
+    <ng-template appDynamicLoader [data]="selected"></ng-template>
+  </div>
+
+  <div class="choose__customer">
+    <a href="#">Выбрать поставщика</a>
+  </div>
+</ng-template>

@@ -38,7 +38,7 @@ export class SoundComponent implements OnInit {
       if (step) {
         this.step = Number(step);
 
-        if (step !== 1 && !this.store.getQuestQuantity()) {
+        if (this.step !== 1 && !this.store.getQuestQuantity()) {
           this.router.navigate(['/sound/1']);
         }
       }

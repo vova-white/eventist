@@ -1,10 +1,11 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { pluralize } from 'numeralize-ru';
 
 @Pipe({
   name: 'units'
 })
 export class UnitsPipe implements PipeTransform {
-  transform(val: string): string {
+  transform(val: string, arg?: number): string {
     if (val !== undefined && val !== null) {
       let unit: string;
       switch (val) {
@@ -31,6 +32,21 @@ export class UnitsPipe implements PipeTransform {
           break;
         case 'kvt':
           unit = 'КВт';
+          break;
+        case 'ml':
+          unit = 'мл';
+          break;
+        case 'l':
+          unit = 'л';
+          break;
+        case 'bottle':
+          unit = pluralize(Math.round(arg), 'бутылка', 'бутылки', 'бутылок');
+          break;
+        case 'time':
+          unit = 'ч';
+          break;
+        case 'timeLong':
+          unit = pluralize(Math.round(arg), 'час', 'часа', 'часов');
           break;
       }
       return unit;
