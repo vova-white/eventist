@@ -1,0 +1,151 @@
+<div *ngIf="step === 1" class="audition__check">
+  <div class="elem__audition">
+    <p></p>
+    <div class="slidecontainer range-slider range-slider--no_label">
+      <ng5-slider
+        [(value)]="calculationParams.height"
+        [options]="optionsHeight"
+        (userChangeEnd)="onRangeChanges()"
+      ></ng5-slider>
+      <span class="left__slider"
+        >{{ calculationParams.height }}
+        {{ 'distanceLong' | units: calculationParams.height }}</span
+      >
+    </div>
+  </div>
+</div>
+<div *ngIf="step === 2" class="audition__check">
+  <div class="elem__audition">
+    <p></p>
+    <div class="slidecontainer range-slider range-slider--no_label">
+      <ng5-slider
+        [(value)]="calculationParams.area"
+        [options]="optionsArea"
+        (userChangeEnd)="onRangeChanges()"
+      ></ng5-slider>
+      <span class="left__slider"
+        >{{ calculationParams.area }}
+        <span [innerHtml]="'area' | units: calculationParams.area"></span
+      ></span>
+    </div>
+  </div>
+</div>
+
+<app-format-list
+  *ngIf="step === 3"
+  [list]="chooseParams.format"
+  [active]="calculationParams.format"
+  paramName="format"
+  (chooseFormat)="onChooseFormat($event)"
+></app-format-list>
+
+<div *ngIf="step === 4" class="area__inputs">
+  <form #formHall="ngForm" name="hall" novalidate>
+    <div class="area__elem">
+      <p>Длина (м.)</p>
+      <input
+        name="length"
+        type="number"
+        [(ngModel)]="calculationParams.hall.length"
+        (keyup)="onKeyup($event, formHall)"
+      />
+    </div>
+
+    <div class="area__elem">
+      <p>Ширина (м.)</p>
+      <input
+        name="width"
+        type="number"
+        [(ngModel)]="calculationParams.hall.width"
+        (keyup)="onKeyup($event, formHall)"
+      />
+    </div>
+
+    <div class="area__elem">
+      <p>Высота (м.)</p>
+      <input
+        name="height"
+        type="number"
+        [(ngModel)]="calculationParams.hall.height"
+        (keyup)="onKeyup($event, formHall)"
+        required
+      />
+    </div>
+
+    <div class="area__elem blue__area">
+      <p>Площадь зала</p>
+      <input
+        name="area"
+        type="number"
+        [(ngModel)]="calculationParams.hall.area"
+        (keyup)="onKeyup($event, formHall)"
+        required
+      />
+    </div>
+
+    <div class="area__elem">
+      <input
+        name="quantity"
+        type="number"
+        placeholder="Количество человек"
+        [(ngModel)]="calculationParams.hall.quantity"
+        (keyup)="onKeyup($event, formHall)"
+      />
+    </div>
+  </form>
+</div>
+
+<div *ngIf="step === 5" class="area__inputs">
+  <form #formScene="ngForm" name="scene" novalidate>
+    <div class="area__elem">
+      <p>Длина (м.)</p>
+      <input
+        name="length"
+        type="number"
+        [(ngModel)]="calculationParams.scene.length"
+        (keyup)="onKeyup($event, formScene)"
+      />
+    </div>
+
+    <div class="area__elem">
+      <p>Ширина (м.)</p>
+      <input
+        name="width"
+        type="number"
+        [(ngModel)]="calculationParams.scene.width"
+        (keyup)="onKeyup($event, formScene)"
+      />
+    </div>
+
+    <div class="area__elem">
+      <p>Высота (м.)</p>
+      <input
+        name="height"
+        type="number"
+        [(ngModel)]="calculationParams.scene.height"
+        (keyup)="onKeyup($event, formScene)"
+        required
+      />
+    </div>
+
+    <div class="area__elem blue__area">
+      <p>Площадь сцены</p>
+      <input
+        name="area"
+        type="number"
+        [(ngModel)]="calculationParams.scene.area"
+        required
+        (keyup)="onKeyup($event, formScene)"
+      />
+    </div>
+    <div class="area__elem">
+      <input
+        name="quantity"
+        type="number"
+        placeholder="Количество человек"
+        [(ngModel)]="calculationParams.scene.quantity"
+        (keyup)="onKeyup($event, formScene)"
+      />
+    </div>
+  </form>
+</div>

@@ -35,7 +35,7 @@
         <div class="progress__name">
           <ng-template [ngIf]="index + 1 < step">
             <h2>{{ item.noActive || item.active }}</h2>
-            <p>{{ item.text }}</p>
+            <p [innerHtml]="item.text"></p>
           </ng-template>
           <h2 *ngIf="index + 1 === step">{{ item.active }}</h2>
         </div>

@@ -10,7 +10,7 @@ import {
 import { StoreService } from 'src/app/shared/services/store.service';
 import { DynamicComponentData } from 'src/app/shared/interfaces/dynamic-component-data';
 import { ComponentType } from 'src/app/shared/constants';
-import { Options, LabelType } from 'ng5-slider';
+import { Options } from 'ng5-slider';
 import { pluralize } from 'numeralize-ru';
 
 @Component({

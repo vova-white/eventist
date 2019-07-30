@@ -27,6 +27,9 @@ export class UnitsPipe implements PipeTransform {
         case 'distance':
           unit = `м`;
           break;
+        case 'distanceLong':
+          unit = pluralize(Math.round(arg), 'метр', 'метра', 'метров');
+          break;
         case 'lm':
           unit = 'lm';
           break;

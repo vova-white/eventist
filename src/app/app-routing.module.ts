@@ -58,6 +58,10 @@ const routes: Routes = [
   },
   {
     path: 'light',
+    redirectTo: 'light/1'
+  },
+  {
+    path: 'light/:step',
     component: LightComponent
   },
   {

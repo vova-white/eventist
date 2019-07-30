@@ -42,6 +42,7 @@ import { DrinkBuffetComponent } from './views/drink/drink-buffet/drink-buffet.co
 import { DrinkBanquetComponent } from './views/drink/drink-banquet/drink-banquet.component';
 import { DrinkWeddingComponent } from './views/drink/drink-wedding/drink-wedding.component';
 import { DynamicLoaderDirective } from './shared/directives/dynamic-loader.directive';
+import { LightStepComponent } from './views/light/light-step/light-step.component';
 
 @NgModule({
   declarations: [
@@ -82,7 +83,8 @@ import { DynamicLoaderDirective } from './shared/directives/dynamic-loader.direc
     DrinkBuffetComponent,
     DrinkBanquetComponent,
     DrinkWeddingComponent,
-    DynamicLoaderDirective
+    DynamicLoaderDirective,
+    LightStepComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, Ng5SliderModule],
   entryComponents: [
