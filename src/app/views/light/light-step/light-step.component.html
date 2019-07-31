@@ -47,7 +47,7 @@
         name="length"
         type="number"
         [(ngModel)]="calculationParams.hall.length"
-        (keyup)="onKeyup($event, formHall)"
+        (keyup)="calcArea($event)"
       />
     </div>
 
@@ -57,7 +57,7 @@
         name="width"
         type="number"
         [(ngModel)]="calculationParams.hall.width"
-        (keyup)="onKeyup($event, formHall)"
+        (keyup)="calcArea($event)"
       />
     </div>
 
@@ -67,7 +67,7 @@
         name="height"
         type="number"
         [(ngModel)]="calculationParams.hall.height"
-        (keyup)="onKeyup($event, formHall)"
+        (keyup)="onKeyup()"
         required
       />
     </div>
@@ -78,7 +78,7 @@
         name="area"
         type="number"
         [(ngModel)]="calculationParams.hall.area"
-        (keyup)="onKeyup($event, formHall)"
+        (keyup)="onKeyup()"
         required
       />
     </div>
@@ -89,7 +89,7 @@
         type="number"
         placeholder="Количество человек"
         [(ngModel)]="calculationParams.hall.quantity"
-        (keyup)="onKeyup($event, formHall)"
+        (keyup)="calcAreaByQuantity($event)"
       />
     </div>
   </form>
@@ -103,7 +103,7 @@
         name="length"
         type="number"
         [(ngModel)]="calculationParams.scene.length"
-        (keyup)="onKeyup($event, formScene)"
+        (keyup)="calcArea($event)"
       />
     </div>
 
@@ -113,7 +113,7 @@
         name="width"
         type="number"
         [(ngModel)]="calculationParams.scene.width"
-        (keyup)="onKeyup($event, formScene)"
+        (keyup)="calcArea($event)"
       />
     </div>
 
@@ -123,7 +123,7 @@
         name="height"
         type="number"
         [(ngModel)]="calculationParams.scene.height"
-        (keyup)="onKeyup($event, formScene)"
+        (keyup)="onKeyup()"
         required
       />
     </div>
@@ -135,7 +135,7 @@
         type="number"
         [(ngModel)]="calculationParams.scene.area"
         required
-        (keyup)="onKeyup($event, formScene)"
+        (keyup)="onKeyup()"
       />
     </div>
     <div class="area__elem">
@@ -144,8 +144,18 @@
         type="number"
         placeholder="Количество человек"
         [(ngModel)]="calculationParams.scene.quantity"
-        (keyup)="onKeyup($event, formScene)"
+        (keyup)="calcAreaByQuantity($event)"
       />
     </div>
   </form>
 </div>
+
+<ng-template [ngIf]="step === endStep">
+  <div class="light__data">
+    <ng-template appDynamicLoader [data]="selected"></ng-template>
+  </div>
+
+  <div class="choose__customer">
+    <a href="#">Выбрать поставщика</a>
+  </div>
+</ng-template>

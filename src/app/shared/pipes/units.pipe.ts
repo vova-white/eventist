@@ -33,6 +33,9 @@ export class UnitsPipe implements PipeTransform {
         case 'lm':
           unit = 'lm';
           break;
+        case 'W':
+          unit = 'Ватт';
+          break;
         case 'kvt':
           unit = 'КВт';
           break;

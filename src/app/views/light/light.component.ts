@@ -25,22 +25,24 @@ export class LightComponent implements OnInit {
   calculationParams = {
     height: 6,
     area: 200,
+    type: 'light',
     format: LIGHT_FORMAT,
     formatCoef: LIGHT_FORMAT_COEF[LIGHT_FORMAT],
-    quantity: 100,
     hall: {
       length: '',
       width: '',
       height: '',
       area: '',
-      quantity: ''
+      quantity: '',
+      multy: 1.43
     },
     scene: {
       length: '',
       width: '',
       height: '',
       area: '',
-      quantity: ''
+      quantity: '',
+      multy: 0.15
     }
   };
 
@@ -84,19 +86,31 @@ export class LightComponent implements OnInit {
 
   formatList = [];
 
-  constructor(
-    private activeRoute: ActivatedRoute,
-    private store: StoreService,
-    private router: Router
-  ) {}
+  constructor(private activeRoute: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
     this.activeRoute.params.subscribe(({ step }) => {
       if (step) {
         this.step = Number(step);
 
-        // if (this.step !== 1 && this.step < 4 && this.store.getQuestQuantity()) {
-        //   this.router.navigate(['/light/4'], { skipLocationChange: true });
+        // if (
+        //   this.step > 4 &&
+        //   (!this.calculationParams.hall.area ||
+        //     !this.calculationParams.hall.height)
+        // ) {
+        //   this.router.navigate(['/light/4'], {
+        //     replaceUrl: false
+        //   });
+        // }
+
+        // if (
+        //   this.step > 5 &&
+        //   (!this.calculationParams.scene.area ||
+        //     !this.calculationParams.scene.height)
+        // ) {
+        //   this.router.navigate(['/light/5'], {
+        //     replaceUrl: false
+        //   });
         // }
       }
     });

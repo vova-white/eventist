@@ -8,7 +8,8 @@ export enum ComponentType {
   reception = 'reception',
   buffet = 'buffet',
   banquet = 'banquet',
-  wedding = 'wedding'
+  wedding = 'wedding',
+  light = 'light'
 }
 
 export const IMG_PATH = 'assets/img/';

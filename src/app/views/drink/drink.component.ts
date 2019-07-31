@@ -86,7 +86,7 @@ export class DrinkComponent implements OnInit {
           this.step !== 2 &&
           !this.store.getQuestQuantity()
         ) {
-          this.router.navigate(['/drink/2'], { skipLocationChange: true });
+          this.router.navigate(['/drink/2'], { replaceUrl: false });
         }
       }
     });
