@@ -1,0 +1,31 @@
+<app-section-wrapper [addPadding]="true">
+  <div class="floor__block">
+    <app-heading heading="Ошибка?" back="prev"></app-heading>
+  </div>
+  <div *ngIf="!sended" class="mistake__block">
+    <h6>Мы ошиблись в расчётах? Что-то упустили?</h6>
+    <p>
+      Расскажите нам вашу историю, посоветуйте что сделать и мы постараемся все
+      исправить
+    </p>
+    <div class="mistake__textarea">
+      <textarea
+        name=""
+        id=""
+        cols="30"
+        rows="10"
+        placeholder="Рассказать историю"
+      ></textarea>
+    </div>
+  </div>
+
+  <div *ngIf="sended" class="mistake__block thank__mistake">
+    <img src="assets/img/thank.png" alt="thank" />
+    <h2>Спасибо!</h2>
+    <p>Ваша история отправлена</p>
+  </div>
+  <div class="bottom__next__button ">
+    <a (click)="send()">Рассказать</a>
+  </div>
+</app-section-wrapper>
+<app-menu-bottom></app-menu-bottom>

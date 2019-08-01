@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { PreviousRouteServiceService } from 'src/app/shared/services/previous-route-service.service';
 
-const defaultBak = '/category';
+const defaultBack = '/category';
 
 @Component({
   selector: 'app-heading',
@@ -10,15 +11,22 @@ const defaultBak = '/category';
 export class HeadingComponent implements OnInit, OnChanges {
   @Input() showBack = true;
   @Input() heading = '';
-  @Input() back = defaultBak;
+  @Input() back = defaultBack;
 
-  constructor() {}
+  constructor(private previousRouteService: PreviousRouteServiceService) {}
 
   ngOnInit() {}
 
   ngOnChanges() {
+    if (this.back === 'prev') {
+      this.back =
+        this.previousRouteService.getPreviousUrl() ===
+        this.previousRouteService.getCurrentUrl()
+          ? defaultBack
+          : this.previousRouteService.getPreviousUrl() || defaultBack;
+    }
     if (!this.back) {
-      this.back = defaultBak;
+      this.back = defaultBack;
     }
   }
 }

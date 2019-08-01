@@ -20,6 +20,7 @@ import { BudgetComponent } from './views/budget/budget.component';
 import { SettingsComponent } from './views/settings/settings.component';
 import { SuppliersComponent } from './views/suppliers/suppliers.component';
 import { SupplierComponent } from './views/suppliers/supplier/supplier.component';
+import { ErrorComponent } from './views/error/error.component';
 
 const routes: Routes = [
   {
@@ -121,6 +122,10 @@ const routes: Routes = [
   {
     path: 'suppliers/:id',
     component: SupplierComponent
+  },
+  {
+    path: 'error',
+    component: ErrorComponent
   }
 ];
 

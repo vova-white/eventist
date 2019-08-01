@@ -53,6 +53,7 @@ import localeRu from '@angular/common/locales/ru';
 import { SuppliersComponent } from './views/suppliers/suppliers.component';
 import { SupplierComponent } from './views/suppliers/supplier/supplier.component';
 import { SuppliersLinkComponent } from './components/suppliers-link/suppliers-link.component';
+import { ErrorComponent } from './views/error/error.component';
 
 registerLocaleData(localeRu);
 
@@ -104,7 +105,8 @@ registerLocaleData(localeRu);
     BudgetResultComponent,
     SuppliersComponent,
     SupplierComponent,
-    SuppliersLinkComponent
+    SuppliersLinkComponent,
+    ErrorComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, Ng5SliderModule],
   entryComponents: [
