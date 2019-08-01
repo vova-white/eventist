@@ -2,27 +2,50 @@
   <app-heading heading="Риски"></app-heading>
   <div class="risk__page">
     <div class="budget__input">
-      <input type="text" placeholder="Бюджет" />
+      <input
+        name="x"
+        type="number"
+        placeholder="Бюджет"
+        [(ngModel)]="params.x"
+        (keyup)="calcRisk()"
+        min="1"
+        step="1"
+        required
+      />
     </div>
     <div class="budget__chances">
-      <div class="elem__chance">
+      <div class="elem__audition">
         <p>Вероятность события (1% - 100%)</p>
-        <input type="text" value="89" />
+        <div class="slidecontainer range-slider">
+          <ng5-slider
+            [(value)]="params.a"
+            [options]="options"
+            (userChange)="calcRisk()"
+          ></ng5-slider>
+          <span class="left__slider">{{ params.a }}%</span>
+        </div>
       </div>
-
-      <div class="elem__chance">
+      <div class="elem__audition">
         <p>Ущерб для мероприятия (1% - 100%)</p>
-        <input type="text" value="54" />
+        <div class="slidecontainer range-slider">
+          <ng5-slider
+            [(value)]="params.b"
+            [options]="options"
+            (userChange)="calcRisk()"
+          ></ng5-slider>
+          <span class="left__slider">{{ params.b }}%</span>
+        </div>
       </div>
     </div>
 
-    <div class="budget__excaption">
+    <div *ngIf="params.x" class="budget__excaption">
       <p>
-        Для исключения угрозы разумно инвестировать <span>950 000 руб.</span>
+        Для исключения угрозы разумно инвестировать
+        <span>{{ risk | number: '1.0-0' | noComma }} руб.</span>
       </p>
     </div>
   </div>
-  <app-error-block></app-error-block>
+  <app-error-block *ngIf="params.x"></app-error-block>
 </app-section-wrapper>
 
 <app-menu-bottom></app-menu-bottom>
