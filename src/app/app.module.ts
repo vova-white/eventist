@@ -46,6 +46,12 @@ import { LightStepComponent } from './views/light/light-step/light-step.componen
 import { LightResultComponent } from './views/light/light-result/light-result.component';
 import { SceneStepComponent } from './views/scene/scene-step/scene-step.component';
 import { SceneResultComponent } from './views/scene/scene-result/scene-result.component';
+import { BudgetResultComponent } from './views/budget/budget-result/budget-result.component';
+import { BudgetStepComponent } from './views/budget/budget-step/budget-step.component';
+import { registerLocaleData } from '@angular/common';
+import localeRu from '@angular/common/locales/ru';
+
+registerLocaleData(localeRu);
 
 @NgModule({
   declarations: [
@@ -90,7 +96,9 @@ import { SceneResultComponent } from './views/scene/scene-result/scene-result.co
     LightStepComponent,
     LightResultComponent,
     SceneStepComponent,
-    SceneResultComponent
+    SceneResultComponent,
+    BudgetStepComponent,
+    BudgetResultComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, Ng5SliderModule],
   entryComponents: [
@@ -100,7 +108,8 @@ import { SceneResultComponent } from './views/scene/scene-result/scene-result.co
     DrinkBanquetComponent,
     DrinkWeddingComponent,
     LightResultComponent,
-    SceneResultComponent
+    SceneResultComponent,
+    BudgetResultComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

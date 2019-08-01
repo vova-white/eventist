@@ -1,0 +1,42 @@
+<div *ngIf="step === 1" class="budg__inp">
+  <input
+    name="budget"
+    type="number"
+    placeholder="Бюджет"
+    [(ngModel)]="calculationParams.budget"
+    (keyup)="onChange()"
+  />
+</div>
+
+<div *ngIf="step === 2" class="budget__chances">
+  <div class="elem__audition">
+    <div class="slidecontainer range-slider">
+      <ng5-slider
+        [(value)]="calculationParams.commission"
+        [options]="options"
+        (userChangeEnd)="onChange()"
+      ></ng5-slider>
+      <span class="left__slider">{{ calculationParams.commission }}%</span>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="step === 3" class="budget__visitors">
+  <input
+    name="quantity"
+    type="number"
+    placeholder="Количество участников"
+    [(ngModel)]="calculationParams.quantity"
+    (keyup)="onChange()"
+  />
+</div>
+
+<ng-template [ngIf]="step === endStep">
+  <div class="light__data">
+    <ng-template appDynamicLoader [data]="selected"></ng-template>
+  </div>
+
+  <div class="choose__customer">
+    <a href="#">Выбрать поставщика</a>
+  </div>
+</ng-template>

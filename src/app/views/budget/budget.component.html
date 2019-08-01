@@ -1,18 +1,27 @@
-<app-section-wrapper>
-  <app-heading heading="Бюджет"></app-heading>
+<app-section-wrapper [addPadding]="step === endStep">
+  <app-heading
+    heading="Бюджет"
+    [back]="step !== 1 ? '/budget/' + (step - 1) : ''"
+  ></app-heading>
   <div class="budget__page">
-    <div class="budget__main">
-      <p>
-        <img src="assets/img/greenoval.png" alt="greenoval" /> Введите бюджет
-      </p>
-      <div class="budg__inp">
-        <input type="text" placeholder="Бюджет" />
-      </div>
-    </div>
-  </div>
-  <div class="bottom__next__button ">
-    <a href="#">Далее</a>
-  </div>
-</app-section-wrapper>
+    <app-light-progress
+      [step]="step"
+      [list]="progressList"
+    ></app-light-progress>
 
+    <app-budget-step
+      [chooseParams]="chooseParams"
+      [calculationParams]="calculationParams"
+      [step]="step"
+      [endStep]="endStep"
+      (choose)="onChoose($event)"
+    ></app-budget-step>
+  </div>
+  <div *ngIf="step !== endStep" class="bottom__next__button">
+    <a [routerLink]="'/budget/' + (step + 1)">{{
+      step !== preEndStep ? 'Далее' : 'Расчитать'
+    }}</a>
+  </div>
+  <app-error-block *ngIf="step === endStep"></app-error-block>
+</app-section-wrapper>
 <app-menu-bottom></app-menu-bottom>

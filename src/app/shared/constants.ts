@@ -10,7 +10,8 @@ export enum ComponentType {
   banquet = 'banquet',
   wedding = 'wedding',
   light = 'light',
-  scene = 'scene'
+  scene = 'scene',
+  budget = 'budget'
 }
 
 export const IMG_PATH = 'assets/img/';
@@ -41,4 +42,9 @@ export const LIGHT_STEP = {
 export const SCENE_STEP = {
   preEnd: 2,
   end: 3
+};
+
+export const BUDGET_STEP = {
+  preEnd: 3,
+  end: 4
 };

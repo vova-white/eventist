@@ -106,6 +106,10 @@ const routes: Routes = [
   },
   {
     path: 'budget',
+    redirectTo: 'budget/1'
+  },
+  {
+    path: 'budget/:step',
     component: BudgetComponent
   }
 ];
