@@ -26,9 +26,24 @@ export class SoundStepComponent implements OnInit {
   chooseParams = {
     k1: [{ value: 1.5, text: 'На улице' }, { value: 1, text: 'В помещении' }],
     k2: [
-      new FormatListItem(1.5, 'Концерт', `${IMG_PATH}form1.png`),
-      new FormatListItem(1, 'Банкет', `${IMG_PATH}form2a.png`),
-      new FormatListItem(0.5, 'Конференция', `${IMG_PATH}form3.png`)
+      new FormatListItem(
+        1.5,
+        'Концерт',
+        `${IMG_PATH}form1a.png`,
+        `${IMG_PATH}form1.png`
+      ),
+      new FormatListItem(
+        1,
+        'Банкет',
+        `${IMG_PATH}form2a.png`,
+        `${IMG_PATH}form2.png`
+      ),
+      new FormatListItem(
+        0.5,
+        'Конференция',
+        `${IMG_PATH}form3a.png`,
+        `${IMG_PATH}form3.png`
+      )
     ]
   };
 

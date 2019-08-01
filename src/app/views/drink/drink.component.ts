@@ -60,11 +60,36 @@ export class DrinkComponent implements OnInit {
 
   chooseParams = {
     format: [
-      new FormatListItem('coffee', 'Кофе-брейк', `${IMG_PATH}drink1.png`),
-      new FormatListItem('reception', 'Прием', `${IMG_PATH}drink2.png`),
-      new FormatListItem('buffet', 'Фуршет', `${IMG_PATH}drink3.png`),
-      new FormatListItem('banquet', 'Банкет', `${IMG_PATH}drink4.png`),
-      new FormatListItem('wedding', 'Свадьба', `${IMG_PATH}drink5.png`)
+      new FormatListItem(
+        'coffee',
+        'Кофе-брейк',
+        `${IMG_PATH}drink1a.png`,
+        `${IMG_PATH}drink1.png`
+      ),
+      new FormatListItem(
+        'reception',
+        'Прием',
+        `${IMG_PATH}drink2a.png`,
+        `${IMG_PATH}drink2.png`
+      ),
+      new FormatListItem(
+        'buffet',
+        'Фуршет',
+        `${IMG_PATH}drink3a.png`,
+        `${IMG_PATH}drink3.png`
+      ),
+      new FormatListItem(
+        'banquet',
+        'Банкет',
+        `${IMG_PATH}drink4a.png`,
+        `${IMG_PATH}drink4.png`
+      ),
+      new FormatListItem(
+        'wedding',
+        'Свадьба',
+        `${IMG_PATH}drink5a.png`,
+        `${IMG_PATH}drink5.png`
+      )
     ]
   };
 

@@ -32,7 +32,8 @@ export const LIGHT_FORMAT = 'buffet';
 export const LIGHT_FORMAT_COEF = {
   banquet: 0.063,
   buffet: 0.051,
-  conference: 0.04
+  conference: 0.04,
+  club: 0.082
 };
 export const LIGHT_STEP = {
   preEnd: 5,

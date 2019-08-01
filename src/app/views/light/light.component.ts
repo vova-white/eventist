@@ -77,9 +77,30 @@ export class LightComponent implements OnInit {
 
   chooseParams = {
     format: [
-      new FormatListItem('banquet', 'Банкет', `${IMG_PATH}format1.png`),
-      new FormatListItem('buffet', 'Фуршет', `${IMG_PATH}format2a.png`),
-      new FormatListItem('conference', 'Конференция', `${IMG_PATH}format3.png`)
+      new FormatListItem(
+        'banquet',
+        'Банкет',
+        `${IMG_PATH}format1a.png`,
+        `${IMG_PATH}format1.png`
+      ),
+      new FormatListItem(
+        'buffet',
+        'Фуршет',
+        `${IMG_PATH}format2a.png`,
+        `${IMG_PATH}format2.png`
+      ),
+      new FormatListItem(
+        'conference',
+        'Конференция',
+        `${IMG_PATH}format3a.png`,
+        `${IMG_PATH}format3.png`
+      ),
+      new FormatListItem(
+        'club',
+        ' Клуб/концерт',
+        `${IMG_PATH}format4a.png`,
+        `${IMG_PATH}format4.png`
+      )
     ]
   };
 

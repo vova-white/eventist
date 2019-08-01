@@ -2,9 +2,9 @@ $(document).ready(function(){
 	var input = document.querySelector("#phone");
 
   var iti = window.intlTelInput(input, {
-  nationalMode: true,
-  utilsScript: "utils.js?1562189064761" // just for formatting/placeholders etc
-});
+    nationalMode: true,
+    utilsScript: "utils.js?1562189064761" // just for formatting/placeholders etc
+  });
 
   var handleChange = function() {
   var text = (iti.isValidNumber()) ? "International: " + iti.getNumber() : "Please enter a number below";
@@ -40,7 +40,7 @@ input.addEventListener('keyup', handleChange);
         'max': 100
     }
 });
-	slider.noUiSlider.on('change.one', function () { 
+	slider.noUiSlider.on('change.one', function () {
 		$("#span1").text(Math.round(+$("#slider .noUi-handle-lower").attr("aria-valuemin") + +$("#slider .noUi-handle-lower").attr("aria-valuenow")).toFixed(0) + "%");
 		$("#span2").text(Math.round(+$("#slider .noUi-handle-upper ").attr("aria-valuenow") - +$("#slider .noUi-handle-lower").attr("aria-valuenow")).toFixed(0) +  "%");
 		$("#span3").text(Math.round(+$("#slider .noUi-handle-upper ").attr("aria-valuemax") - +$("#slider .noUi-handle-upper").attr("aria-valuenow")).toFixed(0) +  "%");
