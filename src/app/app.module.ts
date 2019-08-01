@@ -50,6 +50,9 @@ import { BudgetResultComponent } from './views/budget/budget-result/budget-resul
 import { BudgetStepComponent } from './views/budget/budget-step/budget-step.component';
 import { registerLocaleData } from '@angular/common';
 import localeRu from '@angular/common/locales/ru';
+import { SuppliersComponent } from './views/suppliers/suppliers.component';
+import { SupplierComponent } from './views/suppliers/supplier/supplier.component';
+import { SuppliersLinkComponent } from './components/suppliers-link/suppliers-link.component';
 
 registerLocaleData(localeRu);
 
@@ -98,7 +101,10 @@ registerLocaleData(localeRu);
     SceneStepComponent,
     SceneResultComponent,
     BudgetStepComponent,
-    BudgetResultComponent
+    BudgetResultComponent,
+    SuppliersComponent,
+    SupplierComponent,
+    SuppliersLinkComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, Ng5SliderModule],
   entryComponents: [

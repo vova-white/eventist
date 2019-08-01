@@ -1,4 +1,4 @@
-<app-section-wrapper>
+<app-section-wrapper [addPadding]="!!calculationParams.quantity">
   <app-heading heading="Туалеты"></app-heading>
   <div class="video__block">
     <div class="count__visitors">
@@ -8,7 +8,7 @@
           <ng5-slider
             [(value)]="calculationParams.quantity"
             [options]="options"
-            (userChangeEnd)="changeRange($event, 'quantity')"
+            (userChange)="changeRange($event, 'quantity')"
           ></ng5-slider>
         </div>
       </div>
@@ -19,7 +19,7 @@
           <ng5-slider
             [(value)]="calculationParams.time"
             [options]="optionsTime"
-            (userChangeEnd)="changeRange($event, 'time')"
+            (userChange)="changeRange($event, 'time')"
           ></ng5-slider>
         </div>
       </div>
@@ -32,10 +32,8 @@
         [data]="item.data"
       ></app-results-table>
     </div>
-    <div class="choose__customer">
-      <a href="#">Выбрать поставщика</a>
-    </div>
+    <app-suppliers-link *ngIf="calculationParams.quantity"></app-suppliers-link>
   </div>
-  <app-error-block></app-error-block>
+  <app-error-block *ngIf="calculationParams.quantity"></app-error-block>
 </app-section-wrapper>
 <app-menu-bottom></app-menu-bottom>

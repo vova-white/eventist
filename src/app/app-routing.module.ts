@@ -18,6 +18,8 @@ import { RiskComponent } from './views/risk/risk.component';
 import { PolygraphyComponent } from './views/polygraphy/polygraphy.component';
 import { BudgetComponent } from './views/budget/budget.component';
 import { SettingsComponent } from './views/settings/settings.component';
+import { SuppliersComponent } from './views/suppliers/suppliers.component';
+import { SupplierComponent } from './views/suppliers/supplier/supplier.component';
 
 const routes: Routes = [
   {
@@ -111,6 +113,14 @@ const routes: Routes = [
   {
     path: 'budget/:step',
     component: BudgetComponent
+  },
+  {
+    path: 'suppliers',
+    component: SuppliersComponent
+  },
+  {
+    path: 'suppliers/:id',
+    component: SupplierComponent
   }
 ];
 

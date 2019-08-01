@@ -8,6 +8,7 @@ import { StoreService } from 'src/app/shared/services/store.service';
 })
 export class CourtComponent implements OnInit {
   activeTab = 'area';
+  isArea = false;
 
   constructor() {}
 
@@ -17,5 +18,9 @@ export class CourtComponent implements OnInit {
     e.preventDefault();
 
     this.activeTab = active;
+  }
+  onChangeArea(e) {
+    console.log(e);
+    this.isArea = e;
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { StoreService } from 'src/app/shared/services/store.service';
 import { CalculationService } from 'src/app/shared/services/calculation.service';
 import { SimpleItem } from 'src/app/shared/models/simple-item';
@@ -9,6 +9,8 @@ import { SimpleItem } from 'src/app/shared/models/simple-item';
   styleUrls: ['./court-guests.component.scss']
 })
 export class CourtGuestsComponent implements OnInit {
+  @Output() changeArea: EventEmitter<any> = new EventEmitter();
+
   calculationParams = {
     area: 0,
     length: null,
@@ -152,12 +154,13 @@ export class CourtGuestsComponent implements OnInit {
 
   getArea() {
     this.calculationParams.area = this.store.getCourtArea();
+
+    this.changeArea.emit(!!this.calculationParams.area);
   }
 
   calcArea() {
     this.calculationParams.area =
       this.calculationParams.length * this.calculationParams.width;
-    this.store.setCourtArea(this.calculationParams.area);
     this.onChange();
   }
 }

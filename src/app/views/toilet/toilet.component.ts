@@ -5,6 +5,7 @@ import { Range } from 'src/app/shared/models/range';
 import { RangeTimeItem } from 'src/app/shared/models/range-time-item';
 import { StoreService } from 'src/app/shared/services/store.service';
 import { CalculationService } from 'src/app/shared/services/calculation.service';
+import { SimpleItem } from 'src/app/shared/models/simple-item';
 
 @Component({
   selector: 'app-toilet',
@@ -79,7 +80,9 @@ export class ToiletComponent implements OnInit {
             'Необходимое количество кабинок туалетов',
             this.range,
             'quantity'
-          )
+          ),
+          new SimpleItem('Мужские', 0, 0, 'multiply', 'quantity'),
+          new SimpleItem('Женские', 0, 0, 'multiply', 'quantity')
         ]
       }
     ];
@@ -96,6 +99,11 @@ export class ToiletComponent implements OnInit {
       this.tablesParams,
       this.calculationParams
     );
+
+    const result = this.tables[0].data[0].result.value;
+
+    const man = (this.tables[0].data[1].result = Math.ceil(result * 0.3));
+    this.tables[0].data[2].result = result - man;
   }
 
   getQuantity() {
