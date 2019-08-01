@@ -110,7 +110,6 @@ export class DrinkComponent implements OnInit {
     if (this.format !== newFormat) {
       this.setProgressList(newFormat);
       this.format = newFormat;
-      this.calculationParams.time = DRINK_TIME[newFormat];
     }
   }
 

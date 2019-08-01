@@ -17,7 +17,7 @@ export class SoundComponent implements OnInit {
       param: 'quantity'
     },
     {
-      active: 'Где проводиться мероприятие',
+      active: 'Где проводится мероприятие',
       param: 'k1'
     },
     {

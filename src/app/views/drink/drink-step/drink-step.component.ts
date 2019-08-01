@@ -9,7 +9,7 @@ import {
 } from '@angular/core';
 import { StoreService } from 'src/app/shared/services/store.service';
 import { DynamicComponentData } from 'src/app/shared/interfaces/dynamic-component-data';
-import { ComponentType } from 'src/app/shared/constants';
+import { ComponentType, DRINK_TIME } from 'src/app/shared/constants';
 import { Options } from 'ng5-slider';
 import { pluralize } from 'numeralize-ru';
 
@@ -68,6 +68,7 @@ export class DrinkStepComponent implements OnInit, OnChanges {
 
   onChooseFormat(e) {
     this.calculationParams[e.param] = e.val;
+    this.calculationParams.time = DRINK_TIME[this.calculationParams[e.param]];
     this.onChoose();
   }
 
