@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { FormatList } from 'src/app/shared/interfaces/format-list';
+import { FormatListItem } from 'src/app/shared/models/format-list-item';
 
 @Component({
   selector: 'app-format-list',
@@ -7,7 +7,7 @@ import { FormatList } from 'src/app/shared/interfaces/format-list';
   styleUrls: ['./format-list.component.scss']
 })
 export class FormatListComponent implements OnInit {
-  @Input() list: FormatList;
+  @Input() list: FormatListItem[];
   @Input() active;
   @Input() paramName: string;
 
