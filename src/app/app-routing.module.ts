@@ -26,6 +26,7 @@ import { SettingsNdsComponent } from './views/settings/settings-nds/settings-nds
 import { SettingsMetricComponent } from './views/settings/settings-metric/settings-metric.component';
 import { SettingsCurrencyComponent } from './views/settings/settings-currency/settings-currency.component';
 import { SettingsSubcribeComponent } from './views/settings/settings-subcribe/settings-subcribe.component';
+import { ProfileComponent } from './views/profile/profile.component';
 
 const routes: Routes = [
   {
@@ -45,6 +46,10 @@ const routes: Routes = [
   { path: 'settings/metric', component: SettingsMetricComponent },
   { path: 'settings/currency', component: SettingsCurrencyComponent },
   { path: 'settings/subscribe', component: SettingsSubcribeComponent },
+  {
+    path: 'profile',
+    component: ProfileComponent
+  },
   {
     path: 'court',
     component: CourtComponent

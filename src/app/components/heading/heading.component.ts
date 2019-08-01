@@ -11,6 +11,7 @@ const defaultBack = '/category';
 export class HeadingComponent implements OnInit, OnChanges {
   @Input() showBack = true;
   @Input() heading = '';
+  @Input() subtitle = '';
   @Input() back = defaultBack;
 
   constructor(private previousRouteService: PreviousRouteServiceService) {}

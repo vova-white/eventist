@@ -1,0 +1,36 @@
+<app-section-wrapper [addPadding]="true">
+  <div class="floor__block profile__head">
+    <app-heading
+      [showBack]="false"
+      heading="Профиль"
+      [subtitle]="isLogined ? '' : 'Не авторизован'"
+    ></app-heading>
+  </div>
+
+  <ng-template [ngIf]="!isLogined">
+    <div class="profile__center">
+      <div class="prof__head">
+        <p>Войдите в приложение что бы произвести расчеты</p>
+      </div>
+    </div>
+    <div class="bottom__next__button ">
+      <a routerLink="/">Войти</a>
+    </div>
+  </ng-template>
+
+  <ng-template [ngIf]="isLogined">
+    <div class="profile__center">
+      <div class="prof__info">
+        <h2>Кириллов Севастьян Тимурович</h2>
+        <p>Вы вошли с помощью социальных сетей</p>
+      </div>
+    </div>
+    <div class="bottom__next__button logined__button">
+      <a (click)="logout($event)"
+        ><img src="assets/img/logined.png" alt="logined" />Выйти</a
+      >
+    </div>
+  </ng-template>
+</app-section-wrapper>
+
+<app-menu-bottom></app-menu-bottom>

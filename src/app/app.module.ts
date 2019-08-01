@@ -59,6 +59,7 @@ import { SettingsNdsComponent } from './views/settings/settings-nds/settings-nds
 import { SettingsMetricComponent } from './views/settings/settings-metric/settings-metric.component';
 import { SettingsCurrencyComponent } from './views/settings/settings-currency/settings-currency.component';
 import { SettingsSubcribeComponent } from './views/settings/settings-subcribe/settings-subcribe.component';
+import { ProfileComponent } from './views/profile/profile.component';
 
 registerLocaleData(localeRu);
 
@@ -116,7 +117,8 @@ registerLocaleData(localeRu);
     SettingsNdsComponent,
     SettingsMetricComponent,
     SettingsCurrencyComponent,
-    SettingsSubcribeComponent
+    SettingsSubcribeComponent,
+    ProfileComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, Ng5SliderModule],
   entryComponents: [
