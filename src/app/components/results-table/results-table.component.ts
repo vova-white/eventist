@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { SimpleArrayItemCalc } from 'src/app/shared/models/simple-array-item-calc';
 
 @Component({
   selector: 'app-results-table',
@@ -16,6 +17,12 @@ export class ResultsTableComponent implements OnInit {
   isObject(val) {
     {
       return typeof val === 'object';
+    }
+  }
+
+  isMinMax(item) {
+    {
+      return item instanceof SimpleArrayItemCalc;
     }
   }
 

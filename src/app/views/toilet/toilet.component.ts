@@ -100,9 +100,9 @@ export class ToiletComponent implements OnInit {
 
   getQuantity() {
     this.calculationParams.quantity =
-      this.store.getQuestQuantity() > 5000
+      this.store.getGuestQuantity() > 5000
         ? 5000
-        : this.store.getQuestQuantity() || 100;
+        : this.store.getGuestQuantity() || 100;
   }
 
   changeRange(e, model) {

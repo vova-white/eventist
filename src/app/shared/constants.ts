@@ -9,7 +9,8 @@ export enum ComponentType {
   buffet = 'buffet',
   banquet = 'banquet',
   wedding = 'wedding',
-  light = 'light'
+  light = 'light',
+  scene = 'scene'
 }
 
 export const IMG_PATH = 'assets/img/';
@@ -35,4 +36,9 @@ export const LIGHT_FORMAT_COEF = {
 export const LIGHT_STEP = {
   preEnd: 5,
   end: 6
+};
+
+export const SCENE_STEP = {
+  preEnd: 2,
+  end: 3
 };

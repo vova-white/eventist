@@ -1,26 +1,27 @@
-<app-section-wrapper>
-  <app-heading heading="Сцена"></app-heading>
+<app-section-wrapper [addPadding]="step === endStep">
+  <app-heading
+    heading="Сцена"
+    [back]="step !== 1 ? '/scene/' + (step - 1) : ''"
+  ></app-heading>
   <div class="scene__block">
-    <div class="light__progress">
-      <div class="progress__head">
-        <div class="progress__elem green__elem">
-          <div class="progress__bar">
-            <img src="assets/img/greenoval.png" alt="greyoval" />
-          </div>
-          <div class="progress__name">
-            <h2>Введите количество человек</h2>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="scene__visitors">
-      <input type="text" placeholder="Количество участников" />
-      <input type="text" placeholder="Количество человек на сцене" />
-    </div>
-  </div>
+    <app-light-progress
+      [step]="step"
+      [list]="progressList"
+    ></app-light-progress>
 
-  <div class="bottom__next__button ">
-    <a href="#">Далее</a>
+    <app-scene-step
+      [chooseParams]="chooseParams"
+      [calculationParams]="calculationParams"
+      [step]="step"
+      [endStep]="endStep"
+      (choose)="onChoose($event)"
+    ></app-scene-step>
   </div>
+  <div *ngIf="step !== endStep" class="bottom__next__button">
+    <a [routerLink]="'/scene/' + (step + 1)">{{
+      step !== preEndStep ? 'Далее' : 'Расчитать'
+    }}</a>
+  </div>
+  <app-error-block *ngIf="step === endStep"></app-error-block>
 </app-section-wrapper>
 <app-menu-bottom></app-menu-bottom>

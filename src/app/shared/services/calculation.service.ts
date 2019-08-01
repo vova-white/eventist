@@ -10,6 +10,8 @@ import { CoefficientItem } from '../models/coefficient-item';
 import { CoefficientItemCalc } from '../models/coefficient-item-calc';
 import { GenderCoefItem } from '../models/gender-coef-item';
 import { GenderCoefItemCalc } from '../models/gender-coef-item-calc';
+import { SimpleArrayItem } from '../models/simple-array-item';
+import { SimpleArrayItemCalc } from '../models/simple-array-item-calc';
 
 @Injectable({
   providedIn: 'root'
@@ -70,6 +72,10 @@ export class CalculationService {
         calculationParams[item.activeParam],
         calculationParams.audience
       );
+    }
+
+    if (item instanceof SimpleArrayItem) {
+      calculatedItem = new SimpleArrayItemCalc(item, calculationParams);
     }
 
     return calculatedItem;

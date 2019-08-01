@@ -126,7 +126,7 @@ export class FoodComponent implements OnInit {
   }
 
   getQuantity() {
-    this.calculationParams.quantity = this.store.getQuestQuantity();
+    this.calculationParams.quantity = this.store.getGuestQuantity();
   }
 
   setFasting() {

@@ -2,8 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { DynamicComponent } from 'src/app/shared/interfaces/dynamic-component';
 import {
   DYNAMIC_COMPONENT_DATA,
-  ComponentType,
-  DRINK_TIME
+  ComponentType
 } from 'src/app/shared/constants';
 import { CalculationService } from 'src/app/shared/services/calculation.service';
 import { Range } from 'src/app/shared/models/range';

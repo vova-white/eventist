@@ -35,9 +35,6 @@ export class LightStepComponent implements OnInit, OnChanges {
   };
   optionsArea: Options;
 
-  tables = [];
-  tablesParams = [];
-
   selected: DynamicComponentData = null;
 
   constructor(private store: StoreService) {

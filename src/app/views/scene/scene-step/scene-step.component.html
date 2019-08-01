@@ -1,0 +1,48 @@
+<div *ngIf="step === 1" class="scene__visitors">
+  <input
+    name="quantity"
+    type="number"
+    placeholder="Количество участников"
+    [(ngModel)]="calculationParams.quantity"
+    (keyup)="onChange()"
+  />
+  <input
+    name="quantityScene"
+    type="number"
+    placeholder="Количество человек на сцене"
+    [(ngModel)]="calculationParams.quantityScene"
+    (keyup)="onChange()"
+  />
+</div>
+
+<div *ngIf="step === 2" class="area__inputs">
+  <div class="area__elem">
+    <p>Длина зала (м.)</p>
+    <input
+      name="length"
+      type="number"
+      [(ngModel)]="calculationParams.length"
+      (keyup)="onChange()"
+    />
+  </div>
+
+  <div class="area__elem">
+    <p>Ширина зала (м.)</p>
+    <input
+      name="width"
+      type="number"
+      [(ngModel)]="calculationParams.width"
+      (keyup)="onChange()"
+    />
+  </div>
+</div>
+
+<ng-template [ngIf]="step === endStep">
+  <div class="light__data">
+    <ng-template appDynamicLoader [data]="selected"></ng-template>
+  </div>
+
+  <div class="choose__customer">
+    <a href="#">Выбрать поставщика</a>
+  </div>
+</ng-template>

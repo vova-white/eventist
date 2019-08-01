@@ -2,21 +2,28 @@
   <h3 *ngIf="title">{{ title }}</h3>
   <div *ngFor="let item of data" class="elem__info--floor">
     <p>{{ item.label }}</p>
-    <span *ngIf="!isObject(item.result)">
+    <span *ngIf="!isObject(item.result) && !isMinMax(item)">
       {{ item?.result | number: item.format | noComma }} &nbsp;<span
         class="unit"
         [innerHTML]="item.units | units: item.result"
       ></span
     ></span>
-    <h6 *ngIf="item.description">
-      {{ item?.description }}
-    </h6>
-    <span *ngIf="isObject(item.result)">
+    <span *ngIf="isObject(item.result) && !isMinMax(item)">
       {{ item?.result.value | number: item.format | noComma
       }}{{ isInfinity(item.result.max) ? '+' : '' }} &nbsp;<span
         class="unit"
         [innerHTML]="item.units | units"
       ></span
     ></span>
+    <span *ngIf="isMinMax(item)">
+      {{ item?.result?.min | number: item.format | noComma }} -
+      {{ item?.result?.max | number: item.format | noComma }}&nbsp;<span
+        class="unit"
+        [innerHTML]="item.units | units"
+      ></span
+    ></span>
+    <h6 *ngIf="item.description">
+      {{ item?.description }}
+    </h6>
   </div>
 </div>

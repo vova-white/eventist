@@ -9,7 +9,7 @@ export class StoreService {
 
   constructor() {}
 
-  public getQuestQuantity(): number {
+  public getGuestQuantity(): number {
     return this.guestsQuantity;
   }
 

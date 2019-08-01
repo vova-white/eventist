@@ -78,6 +78,10 @@ const routes: Routes = [
   },
   {
     path: 'scene',
+    redirectTo: 'scene/1'
+  },
+  {
+    path: 'scene/:step',
     component: SceneComponent
   },
   {

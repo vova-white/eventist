@@ -8,7 +8,6 @@ import {
 import { ProgressList } from 'src/app/shared/interfaces/progress-list';
 import { FormatListItem } from 'src/app/shared/models/format-list-item';
 import { ActivatedRoute, Router } from '@angular/router';
-import { StoreService } from 'src/app/shared/services/store.service';
 
 @Component({
   selector: 'app-light',
@@ -93,25 +92,25 @@ export class LightComponent implements OnInit {
       if (step) {
         this.step = Number(step);
 
-        // if (
-        //   this.step > 4 &&
-        //   (!this.calculationParams.hall.area ||
-        //     !this.calculationParams.hall.height)
-        // ) {
-        //   this.router.navigate(['/light/4'], {
-        //     replaceUrl: false
-        //   });
-        // }
+        if (
+          this.step > 4 &&
+          (!this.calculationParams.hall.area ||
+            !this.calculationParams.hall.height)
+        ) {
+          this.router.navigate(['/light/4'], {
+            replaceUrl: false
+          });
+        }
 
-        // if (
-        //   this.step > 5 &&
-        //   (!this.calculationParams.scene.area ||
-        //     !this.calculationParams.scene.height)
-        // ) {
-        //   this.router.navigate(['/light/5'], {
-        //     replaceUrl: false
-        //   });
-        // }
+        if (
+          this.step > 5 &&
+          (!this.calculationParams.scene.area ||
+            !this.calculationParams.scene.height)
+        ) {
+          this.router.navigate(['/light/5'], {
+            replaceUrl: false
+          });
+        }
       }
     });
 

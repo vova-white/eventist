@@ -94,7 +94,7 @@ export class DrinkStepComponent implements OnInit, OnChanges {
   }
 
   getQuantity() {
-    this.calculationParams.quantity = this.store.getQuestQuantity();
+    this.calculationParams.quantity = this.store.getGuestQuantity();
   }
 
   loadByString(type: ComponentType) {
