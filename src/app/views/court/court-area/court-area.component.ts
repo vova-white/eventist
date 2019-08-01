@@ -30,7 +30,6 @@ export class CourtAreaComponent implements OnInit {
     new Range(1500, 2000, 500),
     new Range(2000, 4001, 700),
     new Range(4001, Infinity, 700)
-    // TODO: Площадка: Кейтеринг. Что показывать есть значение больше 4000 чел.
   ];
 
   constructor(
@@ -60,7 +59,6 @@ export class CourtAreaComponent implements OnInit {
           new SimpleItem('Танцпол (бальные танцы)', 1.971612),
           new SimpleItem('Сцена', 0.1, 9),
           new SimpleItem('Гардероб', 0.11, 6),
-          // TODO: Площадка: Зона курения. Получаются очень мальнькие значения
           new SimpleItem('Зона курения', 0.4 * 0.07),
           new SimpleItem('Административная зона', 0.08, 10),
           new RangeItem('Кейтеринг', this.range)

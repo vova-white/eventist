@@ -99,7 +99,6 @@ export class CourtGuestsComponent implements OnInit {
             '1.0-0',
             'area'
           ),
-          // TODO: Площадка. Гости. Проверить коеф.ты класс 45см и 75см
           new SimpleItem(
             'Класс (столы 45 см)',
             1.9305,
