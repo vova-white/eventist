@@ -54,6 +54,11 @@ import { SuppliersComponent } from './views/suppliers/suppliers.component';
 import { SupplierComponent } from './views/suppliers/supplier/supplier.component';
 import { SuppliersLinkComponent } from './components/suppliers-link/suppliers-link.component';
 import { ErrorComponent } from './views/error/error.component';
+import { SettingsLanguageComponent } from './views/settings/settings-language/settings-language.component';
+import { SettingsNdsComponent } from './views/settings/settings-nds/settings-nds.component';
+import { SettingsMetricComponent } from './views/settings/settings-metric/settings-metric.component';
+import { SettingsCurrencyComponent } from './views/settings/settings-currency/settings-currency.component';
+import { SettingsSubcribeComponent } from './views/settings/settings-subcribe/settings-subcribe.component';
 
 registerLocaleData(localeRu);
 
@@ -106,7 +111,12 @@ registerLocaleData(localeRu);
     SuppliersComponent,
     SupplierComponent,
     SuppliersLinkComponent,
-    ErrorComponent
+    ErrorComponent,
+    SettingsLanguageComponent,
+    SettingsNdsComponent,
+    SettingsMetricComponent,
+    SettingsCurrencyComponent,
+    SettingsSubcribeComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, Ng5SliderModule],
   entryComponents: [

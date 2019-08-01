@@ -21,6 +21,11 @@ import { SettingsComponent } from './views/settings/settings.component';
 import { SuppliersComponent } from './views/suppliers/suppliers.component';
 import { SupplierComponent } from './views/suppliers/supplier/supplier.component';
 import { ErrorComponent } from './views/error/error.component';
+import { SettingsLanguageComponent } from './views/settings/settings-language/settings-language.component';
+import { SettingsNdsComponent } from './views/settings/settings-nds/settings-nds.component';
+import { SettingsMetricComponent } from './views/settings/settings-metric/settings-metric.component';
+import { SettingsCurrencyComponent } from './views/settings/settings-currency/settings-currency.component';
+import { SettingsSubcribeComponent } from './views/settings/settings-subcribe/settings-subcribe.component';
 
 const routes: Routes = [
   {
@@ -35,6 +40,11 @@ const routes: Routes = [
     path: 'settings',
     component: SettingsComponent
   },
+  { path: 'settings/language', component: SettingsLanguageComponent },
+  { path: 'settings/nds', component: SettingsNdsComponent },
+  { path: 'settings/metric', component: SettingsMetricComponent },
+  { path: 'settings/currency', component: SettingsCurrencyComponent },
+  { path: 'settings/subscribe', component: SettingsSubcribeComponent },
   {
     path: 'court',
     component: CourtComponent

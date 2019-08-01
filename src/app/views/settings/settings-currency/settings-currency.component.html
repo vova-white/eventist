@@ -1,0 +1,40 @@
+<app-section-wrapper [addPadding]="true">
+  <div class="language__block">
+    <div class="head__language">
+      <a routerLink="/settings"
+        ><img src="assets/img/leftarr.png" alt="leftarr" /> Назад</a
+      >
+      <h6>Валюта</h6>
+    </div>
+  </div>
+
+  <div class="currency__block">
+    <div class="elem__currency">
+      <a href="#" (click)="onClick($event)"
+        ><img src="assets/img/curr1.png" alt="curr1" /> Рубль</a
+      >
+    </div>
+
+    <div class="elem__currency">
+      <a href="#" (click)="onClick($event)"
+        ><img src="assets/img/curr2.png" alt="curr1" /> Доллар</a
+      >
+    </div>
+    <div class="elem__currency">
+      <a href="#" (click)="onClick($event)"
+        ><img src="assets/img/curr1.png" alt="curr1" /> Евро</a
+      >
+    </div>
+    <div class="elem__currency">
+      <a href="#" (click)="onClick($event)"
+        ><img src="assets/img/curr1.png" alt="curr1" /> Теньге</a
+      >
+    </div>
+    <div class="elem__currency">
+      <a href="#" (click)="onClick($event)"
+        ><img src="assets/img/curr1.png" alt="curr1" /> Юань</a
+      >
+    </div>
+  </div>
+</app-section-wrapper>
+<app-menu-bottom></app-menu-bottom>

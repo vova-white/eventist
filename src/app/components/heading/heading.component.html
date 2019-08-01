@@ -2,6 +2,6 @@
   <a *ngIf="showBack" [routerLink]="[back]"
     ><img src="assets/img/leftarr.png" alt="leftarr" /> Назад</a
   >
-  <h2>{{ heading }}</h2>
+  <h2 *ngIf="heading">{{ heading }}</h2>
   <ng-content></ng-content>
 </div>
