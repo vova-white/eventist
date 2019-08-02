@@ -1,0 +1,31 @@
+<h6 class="h6">Форматы печатных листов</h6>
+
+<div class="formats">
+  <div *ngFor="let item of formats" class="formats__item">
+    <div class="formats__heading" (click)="toggle(item.slug)">
+      <h2 class="formats__title">{{ item.title }}</h2>
+      <span *ngIf="item.subtitle" class="formats__subtitle">{{
+        item.subtitle
+      }}</span>
+    </div>
+    <div *ngIf="item.slug === active" class="formats__body">
+      <p *ngIf="item.descritprion" class="formats__description">
+        {{ item.descritprion }}
+      </p>
+      <table class="formats__table">
+        <thead>
+          <tr>
+            <th *ngFor="let column of item.table">{{ column.title }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of createTableBody(item.table)">
+            <td *ngFor="let td of row">{{ td }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<app-suppliers-link></app-suppliers-link>

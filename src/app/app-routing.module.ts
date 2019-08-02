@@ -27,6 +27,8 @@ import { SettingsMetricComponent } from './views/settings/settings-metric/settin
 import { SettingsCurrencyComponent } from './views/settings/settings-currency/settings-currency.component';
 import { SettingsSubcribeComponent } from './views/settings/settings-subcribe/settings-subcribe.component';
 import { ProfileComponent } from './views/profile/profile.component';
+import { PolygraphyWeightComponent } from './views/polygraphy/polygraphy-weight/polygraphy-weight.component';
+import { PolygraphyFormatComponent } from './views/polygraphy/polygraphy-format/polygraphy-format.component';
 
 const routes: Routes = [
   {
@@ -120,7 +122,17 @@ const routes: Routes = [
   },
   {
     path: 'polygraphy',
-    component: PolygraphyComponent
+    component: PolygraphyComponent,
+    children: [
+      {
+        path: '',
+        component: PolygraphyWeightComponent
+      },
+      {
+        path: 'formats',
+        component: PolygraphyFormatComponent
+      }
+    ]
   },
   {
     path: 'budget',

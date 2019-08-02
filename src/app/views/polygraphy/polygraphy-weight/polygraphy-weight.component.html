@@ -1,0 +1,58 @@
+<div class="audition__check">
+  <div class="elem__audition">
+    <p>Плотности бумаги</p>
+    <div class="slidecontainer range-slider range-slider--no_label">
+      <ng5-slider
+        [(value)]="calculationParams.weight"
+        [options]="optionsWeight"
+        (userChange)="onChanges()"
+      ></ng5-slider>
+      <span class="left__slider"
+        >{{ calculationParams.weight }} гр/м<sup>2</sup></span
+      >
+    </div>
+  </div>
+  <div class="elem__audition elem__audition__range">
+    <p>Формат</p>
+    <div class="slidecontainer range-slider range-slider--no_label">
+      <ng5-slider
+        [(value)]="calculationParams.format"
+        [options]="optionsFormat"
+        (userChange)="onChanges()"
+      ></ng5-slider>
+      <span class="left__slider">A{{ calculationParams.format }}</span>
+    </div>
+  </div>
+</div>
+
+<div class="area__inputs">
+  <div class="area__elem">
+    <p>Количество страниц</p>
+    <input
+      name="quantity"
+      type="number"
+      [(ngModel)]="calculationParams.quantity"
+      (keyup)="onChanges()"
+    />
+  </div>
+
+  <div class="area__elem">
+    <p>Тираж</p>
+    <input
+      name="edition"
+      type="number"
+      [(ngModel)]="calculationParams.edition"
+      (keyup)="onChanges()"
+    />
+  </div>
+</div>
+
+<div class="light__data">
+  <app-results-table
+    *ngFor="let item of tables"
+    [title]="item.title"
+    [data]="item.data"
+  ></app-results-table>
+</div>
+
+<app-suppliers-link></app-suppliers-link>

@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./polygraphy.component.scss']
 })
 export class PolygraphyComponent implements OnInit {
+  childrens = [
+    { link: '/polygraphy', text: 'Вес' },
+    { link: 'formats', text: 'Форматы' }
+  ];
 
-  constructor() { }
+  isResult = true;
 
-  ngOnInit() {
-  }
+  constructor() {}
 
+  ngOnInit() {}
 }

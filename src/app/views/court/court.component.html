@@ -1,4 +1,4 @@
-<app-section-wrapper [addPadding]="isArea">
+<app-section-wrapper [addPadding]="activeTab === 'guests' && isArea">
   <div class="floor__block">
     <app-heading heading="Площадка"></app-heading>
 
@@ -23,7 +23,7 @@
       </div>
     </div>
   </div>
-  <app-error-block *ngIf="isArea"></app-error-block>
+  <app-error-block *ngIf="activeTab === 'guests' && isArea"></app-error-block>
 </app-section-wrapper>
 
 <app-menu-bottom></app-menu-bottom>

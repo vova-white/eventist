@@ -60,6 +60,8 @@ import { SettingsMetricComponent } from './views/settings/settings-metric/settin
 import { SettingsCurrencyComponent } from './views/settings/settings-currency/settings-currency.component';
 import { SettingsSubcribeComponent } from './views/settings/settings-subcribe/settings-subcribe.component';
 import { ProfileComponent } from './views/profile/profile.component';
+import { PolygraphyWeightComponent } from './views/polygraphy/polygraphy-weight/polygraphy-weight.component';
+import { PolygraphyFormatComponent } from './views/polygraphy/polygraphy-format/polygraphy-format.component';
 
 registerLocaleData(localeRu);
 
@@ -118,7 +120,9 @@ registerLocaleData(localeRu);
     SettingsMetricComponent,
     SettingsCurrencyComponent,
     SettingsSubcribeComponent,
-    ProfileComponent
+    ProfileComponent,
+    PolygraphyWeightComponent,
+    PolygraphyFormatComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, Ng5SliderModule],
   entryComponents: [

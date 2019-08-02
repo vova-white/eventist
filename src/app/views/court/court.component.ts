@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { StoreService } from 'src/app/shared/services/store.service';
 
 @Component({
   selector: 'app-court',
@@ -20,7 +19,6 @@ export class CourtComponent implements OnInit {
     this.activeTab = active;
   }
   onChangeArea(e) {
-    console.log(e);
     this.isArea = e;
   }
 }

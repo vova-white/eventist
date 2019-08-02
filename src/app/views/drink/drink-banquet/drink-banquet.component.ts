@@ -36,8 +36,6 @@ export class DrinkBanquetComponent implements DynamicComponent, OnInit {
       0.8
     );
 
-    console.log(this.timeMulty);
-
     this.tablesParams = [
       {
         title: 'Шампанское',

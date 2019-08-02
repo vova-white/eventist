@@ -1,5 +1,21 @@
-<app-section-wrapper>
-  <app-heading heading="Полиграфия"></app-heading>
+<app-section-wrapper [addPadding]="isResult">
+  <div class="floor__block">
+    <app-heading heading="Полиграфия"></app-heading>
+
+    <div class="floor__page">
+      <ul class="switcher__floor ">
+        <li
+          *ngFor="let item of childrens"
+          routerLinkActive="active__switch"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <a [routerLink]="item.link">{{ item.text }}</a>
+        </li>
+      </ul>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <app-error-block *ngIf="isResult"></app-error-block>
 </app-section-wrapper>
 
 <app-menu-bottom></app-menu-bottom>
