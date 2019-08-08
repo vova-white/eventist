@@ -20,10 +20,5 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <allow-intent href="market:*" />
-    <icon density="mdpi" src="src/assets/img/icons/Untitled-1@0,25x.png" />
-    <icon density="hdpi" src="src/assets/img/icons/Untitled-1@0,33x.png" />
-    <icon density="xhdpi" src="src/assets/img/icons/Untitled-1@0,5x.png" />
-    <icon density="xxhdpi" src="src/assets/img/icons/Untitled-1@0,75x.png" />
-    <icon density="xxxhdpi" src="src/assets/img/icons/Untitled-1.png" />
     <preference name="loglevel" value="DEBUG" />
 </widget>
